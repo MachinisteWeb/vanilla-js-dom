@@ -114,3 +114,77 @@ to Vanilla JS
 ```js
 document.getElementById("id");
 ```
+
+#### .classname #id tagname ####
+
+From jQuery
+
+```js
+$("#id .classname tagname")[0];
+```
+
+to Vanilla JS
+
+```js
+document.querySelector("#id .classname tagname");</code></pre>
+    </blockquote>
+</div>
+```
+
+#### [.classname #id tagname] ####
+
+From jQuery
+
+```js
+$("#id .classname tagname").each(function (i, element) {
+    element;
+});
+```
+
+to Vanilla JS
+
+```js
+var elements = document.querySelectorAll("#id .classname tagname");
+[].forEach.call(elements, function (element) {
+    element;
+});
+```
+
+#### [.classname] ####
+
+From jQuery
+
+```js
+$(".classname").each(function (i, element) {
+    element;
+});
+```
+
+to Vanilla JS
+
+```js
+var elements = document.getElementsByClassName(".classname");
+[].forEach.call(elements, function(element) {
+    element;
+});
+```
+
+#### [tagname] ####
+
+From jQuery
+
+```js
+$("div").each(function (i, element) {
+    element;
+});
+```
+
+to Vanilla JS
+
+```js
+var elements = document.getElementsByTagName("div");
+[].forEach.call(elements, function(element) {
+    element;
+});
+```
+
