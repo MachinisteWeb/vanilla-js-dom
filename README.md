@@ -51,3 +51,26 @@ The much faster method:
 | jQuery       | [$("div");](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
 | jQuery       | [dojo.query("div");](http://codepen.io/Haeresis/pen/dYQKJX)                           |                  3 |
 | MooTools     | [Slick.search(document, "div", new Elements);](http://codepen.io/Haeresis/pen/qOQKxO) |                  2 |
+
+### VanillaJS vs jQuery ###
+
+#### Retrieve 10 DOM elements by class name ####
+
+|            | Code                                                                                 | 100 ops Vanilla JS |
+|------------|--------------------------------------------------------------------------------------|-------------------:|
+| Vanilla JS | [document.getElementsByClassName("vanilla");](http://codepen.io/Haeresis/pen/ZbmRMN) |                100 |
+| jQuery     | [$(".jquery");](http://codepen.io/Haeresis/pen/jbQKeQ)                               |                 25 |
+
+#### Retrieve DOM element with `<#id> .inner span` selector ####
+
+|            | Code                                                                                     | 100 ops Vanilla JS |
+|------------|------------------------------------------------------------------------------------------|-------------------:|
+| Vanilla JS | [document.querySelector("#vanilla .inner span");](http://codepen.io/Haeresis/pen/PPxaVQ) |                100 |
+| jQuery     | [$("#jquery .inner span");](http://codepen.io/Haeresis/pen/YyRvgQ)                       |                 17 |
+
+#### Retrieve 10 DOM elements with `<.className> .inner span` selector ####
+
+|            | Code                                                                                        | 100 ops Vanilla JS |
+|------------|---------------------------------------------------------------------------------------------|-------------------:|
+| Vanilla JS | [document.querySelectorAll(".vanilla .inner span");](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
+| jQuery     | [$(".jquery .inner span");](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
