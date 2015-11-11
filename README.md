@@ -30,6 +30,12 @@ The much faster method:
 
 
 
+## Summary ##
+
+
+
+
+
 ## Speed Comparison ##
 
 ### Retrieve DOM element by ID ###
@@ -345,7 +351,7 @@ request(&gt;url>, function (err, response) {
 
 
 
-### ÉFFETS ###
+### EFFECTS ###
 
 #### Animation ####
 
@@ -414,7 +420,9 @@ to Vanilla JS
 &lt;element>.style.display = "";
 ```
 
-### ÉLÉMENTS ###
+
+
+### ELEMENTS ###
 
 #### Add Class ####
 
@@ -968,7 +976,9 @@ to Vanilla JS
 &lt;element>.classList.toggle(&lt;className>);
 ```
 
-### ÉVÈNEMENTS ###
+
+
+### EVENTS ###
 
 #### Load ####
 
@@ -1062,7 +1072,9 @@ event.test = true;
 &lt;element>.dispatchEvent(event);
 ```
 
-### UTILES ###
+
+
+### UTILS ###
 
 #### Array Each ####
 
