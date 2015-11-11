@@ -42,6 +42,8 @@ The much faster method:
 | jQuery       | [$("#jquery");](http://codepen.io/Haeresis/pen/EVOLLe)                       |                 42 |
 | MooTools     | [document.id("mootools");](http://codepen.io/Haeresis/pen/gaQzQr)            |                 24 |
 
+
+
 ### Retrieve 10 DOM elements by tag name ###
 
 |              | Code                                                                                  | 100 ops Vanilla JS |
@@ -51,6 +53,8 @@ The much faster method:
 | jQuery       | [$("div");](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
 | jQuery       | [dojo.query("div");](http://codepen.io/Haeresis/pen/dYQKJX)                           |                  3 |
 | MooTools     | [Slick.search(document, "div", new Elements);](http://codepen.io/Haeresis/pen/qOQKxO) |                  2 |
+
+
 
 ### VanillaJS vs jQuery ###
 
@@ -74,3 +78,17 @@ The much faster method:
 |------------|---------------------------------------------------------------------------------------------|-------------------:|
 | Vanilla JS | [document.querySelectorAll(".vanilla .inner span");](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
 | jQuery     | [$(".jquery .inner span");](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
+
+
+
+### VanillaJS Selector Performances ###
+
+All test is based on `<section id="vanilla" class="vanilla"><article class="inner"><div class="target" id="target"></div></article></section>` HTML.
+
+| Selectionner le noeud `<div class="target" id="target"></div>`                             | 100 ops Vanilla JS |
+|--------------------------------------------------------------------------------------------|-------------------:|
+| [document.getElementsByTagName("div");](http://codepen.io/Haeresis/pen/PPxdWo)             |                100 |
+| [document.getElementById("target");](http://codepen.io/Haeresis/pen/xwQaEz)                |                 99 |
+| [document.getElementsByClassName("target");](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
+| [document.querySelector(".vanilla .inner div");](http://codepen.io/Haeresis/pen/qOQMRJ)    |                 68 |
+| [document.querySelectorAll(".vanilla .inner div");](http://codepen.io/Haeresis/pen/epQLve) |                 35 |
