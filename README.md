@@ -56,7 +56,7 @@ The much faster method:
 
 
 
-### VanillaJS vs jQuery ###
+### Vanilla JS vs jQuery ###
 
 #### Retrieve 10 DOM elements by class name ####
 
@@ -81,9 +81,9 @@ The much faster method:
 
 
 
-### VanillaJS Selector Performances ###
+### Vanilla JS Selector Performances ###
 
-All test is based on `<section id="vanilla" class="vanilla"><article class="inner"><div class="target" id="target"></div></article></section>` HTML.
+All tests are based on `<section id="vanilla" class="vanilla"><article class="inner"><div class="target" id="target"></div></article></section>` HTML.
 
 | Selectionner le noeud `<div class="target" id="target"></div>`                             | 100 ops Vanilla JS |
 |--------------------------------------------------------------------------------------------|-------------------:|
@@ -92,3 +92,25 @@ All test is based on `<section id="vanilla" class="vanilla"><article class="inne
 | [document.getElementsByClassName("target");](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
 | [document.querySelector(".vanilla .inner div");](http://codepen.io/Haeresis/pen/qOQMRJ)    |                 68 |
 | [document.querySelectorAll(".vanilla .inner div");](http://codepen.io/Haeresis/pen/epQLve) |                 35 |
+
+
+
+
+
+## From jQuery to Vanilla JS ##
+
+### .Selector #Dom ###
+
+#### #id ####
+
+From jQuery
+
+```js
+$("#id")[0];
+```
+
+to Vanilla JS
+
+```js
+document.getElementById("id");
+```
