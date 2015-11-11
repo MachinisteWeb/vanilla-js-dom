@@ -1,21 +1,23 @@
 # Vanilla JS #
 
-**For an international version of this README.md, [follow this link](http://vanilla-js.com/).**
+**Vous êtes français ? Le README [derrière ce lien](http://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
-## À propos ##
+## Overview ##
 
-Vanilla JS est un framework rapide, léger et multi-plateforme pour créer d'incroyables et puissantes applications JavaScript.
+Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
 
-### Exemple d'utilisation standard ###
+### Use in Development ###
 
-```html
-<script src="chemin/vers/vanilla.js"></script>
-```
-
-### Exemple d'utilisation en production ###
+To use Vanilla JS, just put the following code anywhere in your application's HTML:
 
 ```html
-
+<script src="path/to/vanilla.js"></script>
 ```
 
-## [Plus de détails dans cet article](http://blog.lesieur.name/vanilla-js-france/) ##
+### Use in Production ###
+
+When you're ready to move your application to a production deployment, switch to the much faster method:
+
+```html
+
+```
