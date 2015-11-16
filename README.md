@@ -78,6 +78,7 @@ The much faster method:
         - [Has Class](#has-class)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
+        - [Matches Selector](#matches-selector)
         - [Next](#next)
         - [Offset from Document](#offset-from-document)
         - [Offset from Parent](#offset-from-parent)
@@ -110,8 +111,8 @@ The much faster method:
         - [Filter](#filter)
         - [First](#first)
         - [Item](#item)
+        - [Is](#item)
         - [Last](#last)
-        - [Matches Selector](#matches-selector)
         - [Slice](#slice)
     - [UTILS](#utils)
         - [Array Each](#array-each)
@@ -761,6 +762,20 @@ to Vanilla JS
 <node>.insertAdjacentHTML("beforebegin", <htmlString>);
 ```
 
+#### Matches Selector ####
+
+From jQuery
+
+```js
+$(<node>).is(<selector>);
+```
+
+to Vanilla JS
+
+```js
+<node>.matches(<selector>);
+```
+
 #### Next ####
 
 From jQuery
@@ -1227,6 +1242,23 @@ to Vanilla JS
 // <nodeList>[0]
 ```
 
+#### Is ####
+
+From jQuery
+
+```js
+$(<selector>).is(<matchesSelector>);
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.querySelectorAll(<selector>);
+[].some.call(nodeList, function (node) {
+    return node.matches(<matchesSelector>);
+});
+```
+
 #### Item ####
 
 From jQuery
@@ -1255,20 +1287,6 @@ to Vanilla JS
 ```js
 <nodeList>.item(<nodeList>.length - 1);
 // <nodeList>[<nodeList>.length - 1]
-```
-
-#### Matches Selector ####
-
-From jQuery
-
-```js
-$(<node>).is(<selector>);
-```
-
-to Vanilla JS
-
-```js
-<node>.matches(<selector>);
 ```
 
 #### Slice ####
