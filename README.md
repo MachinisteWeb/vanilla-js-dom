@@ -70,7 +70,8 @@ The much faster method:
         - [Empty](#empty)
         - [Filter](#filter)
         - [Find Children](#find-children)
-        - [Get Attributes](#get-attributes)
+        - [Get Attribute](#get-attribute)
+        - [Get Data](#get-data)
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
         - [Get Style](#get-style)
@@ -91,7 +92,8 @@ The much faster method:
         - [Prev](#prev)
         - [Remove Class](#remove-class)
         - [Remove Class](#remove-class)
-        - [Set Attributes](#set-attributes)
+        - [Set Attribute](#set-attribute)
+        - [Set Data](#set-data)
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Style](#set-style)
@@ -654,7 +656,7 @@ to Vanilla JS
 <node>.querySelectorAll(<childrenSelector>);
 ```
 
-#### Get Attributes ####
+#### Get Attribute ####
 
 From jQuery
 
@@ -666,6 +668,20 @@ to Vanilla JS
 
 ```js
 <node>.getAttribute(<attributeName>);
+```
+
+#### Get Data ####
+
+From jQuery
+
+```js
+$(<node>).data(<dataName>);
+```
+
+to Vanilla JS
+
+```js
+<node>.getAttribute(<"data-" + dataName>);
 ```
 
 #### Get HTML ####
@@ -960,7 +976,7 @@ to Vanilla JS
 <node>.classList.remove(<className>);
 ```
 
-#### Set Attributes ####
+#### Set Attribute ####
 
 From jQuery
 
@@ -972,6 +988,20 @@ to Vanilla JS
 
 ```js
 <node>.setAttribute(<attributeName>, <value>);
+```
+
+#### Set Data ####
+
+From jQuery
+
+```js
+$(<node>).data(<dataName>, <value>);
+```
+
+to Vanilla JS
+
+```js
+<node>.setAttribute(<"data-" + dataName>, <value>);
 ```
 
 #### Set HTML ####
