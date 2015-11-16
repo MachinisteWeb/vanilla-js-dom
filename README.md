@@ -101,7 +101,8 @@ The much faster method:
 	- [EVENTS](#events)
 		- [Load](#load)
 		- [Off](#off)
-		- [On](#on)
+        - [On](#on)
+		- [One](#one)
 		- [Ready](#ready)
 		- [Trigger](#trigger)
 	- [UTILS](#utils)
@@ -1108,6 +1109,22 @@ to Vanilla JS
 
 ```js
 &lt;element>.addEventListener(&lt;eventName>, &lt;eventHandler>);
+```
+
+#### One ####
+
+From jQuery
+
+```js
+$(&lt;element>).one(&lt;eventName>, &lt;eventHandler>);
+```
+
+to Vanilla JS
+
+```js
+&lt;element>.addEventListener(&lt;eventName>, function callee(event) {
+    event.target.removeEventListener(e.type, callee);
+});
 ```
 
 #### Ready ####
