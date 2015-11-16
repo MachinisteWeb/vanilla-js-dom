@@ -68,7 +68,6 @@ The much faster method:
         - [Compare](#compare)
         - [Contains](#contains)
         - [Empty](#empty)
-        - [Filter](#filter)
         - [Find Children](#find-children)
         - [Get Attribute](#get-attribute)
         - [Get Data](#get-data)
@@ -79,7 +78,6 @@ The much faster method:
         - [Has Class](#has-class)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
-        - [Matches Selector](#matches-selector)
         - [Next](#next)
         - [Offset from Document](#offset-from-document)
         - [Offset from Parent](#offset-from-parent)
@@ -108,13 +106,16 @@ The much faster method:
         - [One](#one)
         - [Ready](#ready)
         - [Trigger](#trigger)
+    - [FILTERS](#filters)
+        - [Filter](#filter)
+        - [Map](#map)
+        - [Matches Selector](#matches-selector)
     - [UTILS](#utils)
         - [Array Each](#array-each)
         - [Change Futur Context](#change-futur-context)
         - [Extend](#extend)
         - [Index Of](#index-of)
         - [Is Array](#is-array)
-        - [Map](#map)
         - [Now](#now)
         - [Parse HTML](#parse-html)
         - [Parse JSON](#parse-json)
@@ -616,32 +617,6 @@ to Vanilla JS
 <node>.innerHTML = "";
 ```
 
-#### Filter ####
-
-From jQuery
-
-```js
-$(<node>).filter(function (i, node) {
-    return <filterCondition>;
-}).each(function (i, node) {
-    node;
-});
-```
-
-to Vanilla JS
-
-```js
-var nodeList = document.querySelectorAll(<node>);
-
-nodeList = [].filter.call(nodeList, function (node) {
-    return <filterCondition>;
-});
-
-[].forEach.call(nodeList, function (node) {
-    node;
-});
-```
-
 #### Find Children ####
 
 From jQuery
@@ -780,20 +755,6 @@ to Vanilla JS
 
 ```js
 <node>.insertAdjacentHTML("beforebegin", <htmlString>);
-```
-
-#### Matches Selector ####
-
-From jQuery
-
-```js
-$(<node>).is(<selector>);
-```
-
-to Vanilla JS
-
-```js
-<node>.matches(<selector>);
 ```
 
 #### Next ####
@@ -1219,6 +1180,68 @@ event.test = true;
 
 
 
+### FILTERS ###
+
+#### Filter ####
+
+From jQuery
+
+```js
+$(<node>).filter(function (i, node) {
+    return <filterCondition>;
+}).each(function (i, node) {
+    node;
+});
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.querySelectorAll(<node>);
+
+nodeList = [].filter.call(nodeList, function (node) {
+    return <filterCondition>;
+});
+
+[].forEach.call(nodeList, function (node) {
+    node;
+});
+```
+
+#### Map ####
+
+From jQuery
+
+```js
+$.map(<array>, function (item, i) {
+    return <operations>;
+});
+```
+
+to Vanilla JS
+
+```js
+<array>.map(function (item, i) {
+    return <operations>;
+});
+```
+
+#### Matches Selector ####
+
+From jQuery
+
+```js
+$(<node>).is(<selector>);
+```
+
+to Vanilla JS
+
+```js
+<node>.matches(<selector>);
+```
+
+
+
 ### UTILS ###
 
 #### Array Each ####
@@ -1311,24 +1334,6 @@ to Vanilla JS
 
 ```js
 Array.isArray(<array>);
-```
-
-#### Map ####
-
-From jQuery
-
-```js
-$.map(<array>, function (item, i) {
-    return <operations>;
-});
-```
-
-to Vanilla JS
-
-```js
-<array>.map(function (item, i) {
-    return <operations>;
-});
 ```
 
 #### Now ####
