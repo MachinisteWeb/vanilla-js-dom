@@ -33,89 +33,89 @@ The much faster method:
 ## Summary ##
 
 - [Overview](#overview)
-	- [Use in Development](#use-in-development)
-	- [Use in Production](#use-in-production)
+    - [Use in Development](#use-in-development)
+    - [Use in Production](#use-in-production)
 - [Summary](#summary)
 - [Speed Comparison](#speed-comparison)
-	- [Retrieve DOM element by ID](#retrieve-dom-element-by-id)
-	- [Retrieve 10 DOM elements by tag name](#retrieve-10-dom-elements-by-tag-name)
-	- [Vanilla JS vs jQuery](#vanilla-js-vs-jquery)
-		- [Retrieve 10 DOM elements by class name](#retrieve-10-dom-elements-by-class-name)
-		- [Retrieve DOM element with <#id> .inner span selector](#retrieve-dom-element-with-id-inner-span-selector)
-		- [Retrieve 10 DOM elements with <.className> .inner span selector](#retrieve-10-dom-elements-with-classname-inner-span-selector)
-	- [Vanilla JS Selector Performances](#vanilla-js-selector-performances)
+    - [Retrieve DOM element by ID](#retrieve-dom-element-by-id)
+    - [Retrieve 10 DOM elements by tag name](#retrieve-10-dom-elements-by-tag-name)
+    - [Vanilla JS vs jQuery](#vanilla-js-vs-jquery)
+        - [Retrieve 10 DOM elements by class name](#retrieve-10-dom-elements-by-class-name)
+        - [Retrieve DOM element with <#id> .inner span selector](#retrieve-dom-element-with-id-inner-span-selector)
+        - [Retrieve 10 DOM elements with <.className> .inner span selector](#retrieve-10-dom-elements-with-classname-inner-span-selector)
+    - [Vanilla JS Selector Performances](#vanilla-js-selector-performances)
 - [From jQuery to Vanilla JS](#from-jquery-to-vanilla-js)
-	- [.Selector #Dom](#selector-dom)
-		- [#id](#id)
-		- [.classname #id tagname](#classname-id-tagname)
-		- [[.classname #id tagname]](#classname-id-tagname-1)
-		- [[.classname]](#classname)
-		- [[tagname]](#tagname)
-	- [AJAX](#ajax)
-		- [GET](#get)
-		- [JSON](#json)
-		- [POST](#post)
-		- [Request / Response](#request--response)
-	- [EFFECTS](#effects)
-		- [Animation](#animation)
-		- [Hide](#hide)
-		- [Show](#show)
-	- [ELEMENTS](#elements)
-		- [Add Class](#add-class)
-		- [Append](#append)
-		- [Children](#children)
-		- [Clone](#clone)
-		- [Compare](#compare)
-		- [Contains](#contains)
-		- [Empty](#empty)
-		- [Filter](#filter)
-		- [Find Children](#find-children)
-		- [Get Attributes](#get-attributes)
-		- [Get HTML](#get-html)
-		- [Get Node HTML](#get-node-html)
-		- [Get Style](#get-style)
-		- [Get Text](#get-text)
-		- [Has Class](#has-class)
-		- [Insert After](#insert-after)
-		- [Insert Before](#insert-before)
-		- [Matches Selector](#matches-selector)
-		- [Next](#next)
-		- [Offset from Document](#offset-from-document)
-		- [Offset from Parent](#offset-from-parent)
-		- [Offset from Viewport](#offset-from-viewport)
-		- [Outer Height](#outer-height)
-		- [Outer Width](#outer-width)
-		- [Parent](#parent)
-		- [Parent Not Static](#parent-not-static)
-		- [Prepend](#prepend)
-		- [Prev](#prev)
-		- [Remove Class](#remove-class)
-		- [Remove Class](#remove-class)
-		- [Set Attributes](#set-attributes)
-		- [Set HTML](#set-html)
-		- [Set Node HTML](#set-node-html)
-		- [Set Style](#set-style)
-		- [Set Text](#set-text)
-		- [Siblings](#siblings)
-		- [Toggle Class](#toggle-class)
-	- [EVENTS](#events)
-		- [Load](#load)
-		- [Off](#off)
+    - [.Selector #Dom](#selector-dom)
+        - [#id](#id)
+        - [.classname #id tagname](#classname-id-tagname)
+        - [[.classname #id tagname]](#classname-id-tagname-1)
+        - [[.classname]](#classname)
+        - [[tagname]](#tagname)
+    - [AJAX](#ajax)
+        - [GET](#get)
+        - [JSON](#json)
+        - [POST](#post)
+        - [Request / Response](#request--response)
+    - [EFFECTS](#effects)
+        - [Animation](#animation)
+        - [Hide](#hide)
+        - [Show](#show)
+    - [ELEMENTS](#elements)
+        - [Add Class](#add-class)
+        - [Append](#append)
+        - [Children](#children)
+        - [Clone](#clone)
+        - [Compare](#compare)
+        - [Contains](#contains)
+        - [Empty](#empty)
+        - [Filter](#filter)
+        - [Find Children](#find-children)
+        - [Get Attributes](#get-attributes)
+        - [Get HTML](#get-html)
+        - [Get Node HTML](#get-node-html)
+        - [Get Style](#get-style)
+        - [Get Text](#get-text)
+        - [Has Class](#has-class)
+        - [Insert After](#insert-after)
+        - [Insert Before](#insert-before)
+        - [Matches Selector](#matches-selector)
+        - [Next](#next)
+        - [Offset from Document](#offset-from-document)
+        - [Offset from Parent](#offset-from-parent)
+        - [Offset from Viewport](#offset-from-viewport)
+        - [Outer Height](#outer-height)
+        - [Outer Width](#outer-width)
+        - [Parent](#parent)
+        - [Parent Not Static](#parent-not-static)
+        - [Prepend](#prepend)
+        - [Prev](#prev)
+        - [Remove Class](#remove-class)
+        - [Remove Class](#remove-class)
+        - [Set Attributes](#set-attributes)
+        - [Set HTML](#set-html)
+        - [Set Node HTML](#set-node-html)
+        - [Set Style](#set-style)
+        - [Set Text](#set-text)
+        - [Siblings](#siblings)
+        - [Toggle Class](#toggle-class)
+    - [EVENTS](#events)
+        - [Load](#load)
+        - [Off](#off)
         - [On](#on)
-		- [One](#one)
-		- [Ready](#ready)
-		- [Trigger](#trigger)
-	- [UTILS](#utils)
-		- [Array Each](#array-each)
-		- [Change Futur Context](#change-futur-context)
-		- [Extend](#extend)
-		- [Index Of](#index-of)
-		- [Is Array](#is-array)
-		- [Map](#map)
-		- [Now](#now)
-		- [Parse HTML](#parse-html)
-		- [Parse JSON](#parse-json)
-		- [Trim](#trim)
+        - [One](#one)
+        - [Ready](#ready)
+        - [Trigger](#trigger)
+    - [UTILS](#utils)
+        - [Array Each](#array-each)
+        - [Change Futur Context](#change-futur-context)
+        - [Extend](#extend)
+        - [Index Of](#index-of)
+        - [Is Array](#is-array)
+        - [Map](#map)
+        - [Now](#now)
+        - [Parse HTML](#parse-html)
+        - [Parse JSON](#parse-json)
+        - [Trim](#trim)
 
 
 
@@ -197,13 +197,13 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 From jQuery
 
 ```js
-$("#id")[0];
+var node = $("#id")[0];
 ```
 
 to Vanilla JS
 
 ```js
-document.getElementById("id");
+var node = document.getElementById("id");
 ```
 
 #### .classname #id tagname ####
@@ -211,13 +211,13 @@ document.getElementById("id");
 From jQuery
 
 ```js
-$("#id .classname tagname")[0];
+var node = $("#id .classname tagname")[0];
 ```
 
 to Vanilla JS
 
 ```js
-document.querySelector("#id .classname tagname");
+var node = document.querySelector("#id .classname tagname");
 ```
 
 #### [.classname #id tagname] ####
@@ -225,17 +225,17 @@ document.querySelector("#id .classname tagname");
 From jQuery
 
 ```js
-$("#id .classname tagname").each(function (i, element) {
-    element;
+$("#id .classname tagname").each(function (i, node) {
+    node;
 });
 ```
 
 to Vanilla JS
 
 ```js
-var elements = document.querySelectorAll("#id .classname tagname");
-[].forEach.call(elements, function (element) {
-    element;
+var nodeList = document.querySelectorAll("#id .classname tagname");
+[].forEach.call(nodeList, function (node) {
+    node;
 });
 ```
 
@@ -244,8 +244,8 @@ var elements = document.querySelectorAll("#id .classname tagname");
 From jQuery
 
 ```js
-$(".classname").each(function (i, element) {
-    element;
+$(".classname").each(function (i, node) {
+    node;
 });
 ```
 
@@ -253,8 +253,8 @@ to Vanilla JS
 
 ```js
 var elements = document.getElementsByClassName(".classname");
-[].forEach.call(elements, function(element) {
-    element;
+[].forEach.call(elements, function (node) {
+    node;
 });
 ```
 
@@ -263,17 +263,17 @@ var elements = document.getElementsByClassName(".classname");
 From jQuery
 
 ```js
-$("div").each(function (i, element) {
-    element;
+$("div").each(function (i, node) {
+    node;
 });
 ```
 
 to Vanilla JS
 
 ```js
-var elements = document.getElementsByTagName("div");
-[].forEach.call(elements, function(element) {
-    element;
+var nodeList = document.getElementsByTagName("div");
+[].forEach.call(nodeList, function (node) {
+    node;
 });
 ```
 
