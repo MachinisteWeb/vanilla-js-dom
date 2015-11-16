@@ -1209,6 +1209,21 @@ nodeList = [].filter.call(nodeList, function (node) {
 });
 ```
 
+#### First ####
+
+From jQuery
+
+```js
+$(<selector>).first();
+```
+
+to Vanilla JS
+
+```js
+<nodeList>.item(0);
+// <nodeList>[0]
+```
+
 #### Item ####
 
 From jQuery
@@ -1222,6 +1237,21 @@ to Vanilla JS
 ```js
 <nodeList>.item(<index>);
 // <nodeList>[<index>]
+```
+
+#### Last ####
+
+From jQuery
+
+```js
+$(<selector>).last();
+```
+
+to Vanilla JS
+
+```js
+<nodeList>.item(<nodeList>.length - 1);
+// <nodeList>[<nodeList>.length - 1]
 ```
 
 #### Matches Selector ####
