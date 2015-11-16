@@ -99,6 +99,7 @@ The much faster method:
         - [Siblings](#siblings)
         - [Toggle Class](#toggle-class)
     - [EVENTS](#events)
+        - [Hover](#hover)
         - [Load](#load)
         - [Off](#off)
         - [On](#on)
@@ -1062,6 +1063,21 @@ to Vanilla JS
 
 
 ### EVENTS ###
+
+#### Hover ####
+
+From jQuery
+
+```js
+$(<node>).hover(<eventHandlerMouseIn>, <eventHandlerMouseOut>);
+```
+
+to Vanilla JS
+
+```js
+<node>.addEventListener("mouseenter", <eventHandlerMouseIn>);
+<node>.addEventListener("mouseleave", <eventHandlerMouseOut>);
+```
 
 #### Load ####
 
