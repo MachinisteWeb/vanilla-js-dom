@@ -114,6 +114,7 @@ The much faster method:
         - [Has](#has)
         - [Is](#is)
         - [Last](#last)
+        - [Not](#not)
         - [Slice](#slice)
     - [UTILS](#utils)
         - [Array Each](#array-each)
@@ -1305,6 +1306,23 @@ to Vanilla JS
 ```js
 <nodeList>.item(<nodeList>.length - 1);
 // <nodeList>[<nodeList>.length - 1]
+```
+
+#### Not ####
+
+From jQuery
+
+```js
+$(<selector>).not(<matchesSelector>);
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.querySelectorAll(<selector>);
+[].forEach.call(nodeList, function (node) {
+    return !node.matches(<matchesSelector>);
+});
 ```
 
 #### Slice ####
