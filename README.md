@@ -111,7 +111,8 @@ The much faster method:
         - [Filter](#filter)
         - [First](#first)
         - [Item](#item)
-        - [Is](#item)
+        - [Has](#has)
+        - [Is](#is)
         - [Last](#last)
         - [Slice](#slice)
     - [UTILS](#utils)
@@ -1240,6 +1241,23 @@ to Vanilla JS
 ```js
 <nodeList>.item(0);
 // <nodeList>[0]
+```
+
+#### Has ####
+
+From jQuery
+
+```js
+$(<selector>).has(<matchesChildSelector>);
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.querySelectorAll(<selector>);
+[].filter.call(nodeList, function (node) {
+    return node.querySelector(<matchesChildSelector>);
+});
 ```
 
 #### Is ####
