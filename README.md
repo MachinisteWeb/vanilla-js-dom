@@ -108,7 +108,7 @@ The much faster method:
         - [Trigger](#trigger)
     - [FILTERS](#filters)
         - [Filter](#filter)
-        - [Map](#map)
+        - [Item](#item)
         - [Matches Selector](#matches-selector)
     - [UTILS](#utils)
         - [Array Each](#array-each)
@@ -116,6 +116,7 @@ The much faster method:
         - [Extend](#extend)
         - [Index Of](#index-of)
         - [Is Array](#is-array)
+        - [Map](#map)
         - [Now](#now)
         - [Parse HTML](#parse-html)
         - [Parse JSON](#parse-json)
@@ -267,7 +268,7 @@ var nodeList = document.getElementsByClassName(".classname");
 From jQuery
 
 ```js
-$("div").each(function (i, node) {
+$("tagname").each(function (i, node) {
     node;
 });
 ```
@@ -275,7 +276,7 @@ $("div").each(function (i, node) {
 to Vanilla JS
 
 ```js
-var nodeList = document.getElementsByTagName("div");
+var nodeList = document.getElementsByTagName("tagname");
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -573,8 +574,8 @@ to Vanilla JS
 From jQuery
 
 ```js
-var $a = $(<node>).find(<otherElement>);
-    $b = $(<otherElement>);
+var $a = $(<firstNode>).find(<selectorToSecondNode>);
+    $b = $(<selectorToSecondNode>);
 
 $a.is($b);
 ```
@@ -582,9 +583,9 @@ $a.is($b);
 to Vanilla JS
 
 ```js
-var temp = document.getElementsByTagName(<node>)[0],
-    a = temp.getElementsByTagName(<otherElement>)[0],
-    b = document.querySelector(<otherElement>);
+var temp = document.getElementsByTagName(<selectorToFirstNode>)[0],
+    a = temp.getElementsByTagName(<selectorToSecondNode>)[0],
+    b = document.querySelector(<selectorToSecondNode>);
 
 (a === b);
 ```
@@ -1187,7 +1188,7 @@ event.test = true;
 From jQuery
 
 ```js
-$(<node>).filter(function (i, node) {
+$(<selector>).filter(function (i, node) {
     return <filterCondition>;
 }).each(function (i, node) {
     node;
@@ -1197,7 +1198,7 @@ $(<node>).filter(function (i, node) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(<node>);
+var nodeList = document.querySelectorAll(<selector>);
 
 nodeList = [].filter.call(nodeList, function (node) {
     return <filterCondition>;
@@ -1208,22 +1209,19 @@ nodeList = [].filter.call(nodeList, function (node) {
 });
 ```
 
-#### Map ####
+#### Item ####
 
 From jQuery
 
 ```js
-$.map(<array>, function (item, i) {
-    return <operations>;
-});
+$(<selector>).eq(<index>);
 ```
 
 to Vanilla JS
 
 ```js
-<array>.map(function (item, i) {
-    return <operations>;
-});
+<nodeList>.item(<index>);
+// <nodeList>[<index>]
 ```
 
 #### Matches Selector ####
@@ -1334,6 +1332,24 @@ to Vanilla JS
 
 ```js
 Array.isArray(<array>);
+```
+
+#### Map ####
+
+From jQuery
+
+```js
+$.map(<array>, function (item, i) {
+    return <operations>;
+});
+```
+
+to Vanilla JS
+
+```js
+<array>.map(function (item, i) {
+    return <operations>;
+});
 ```
 
 #### Now ####
