@@ -217,9 +217,7 @@ $("#id .classname tagname")[0];
 to Vanilla JS
 
 ```js
-document.querySelector("#id .classname tagname");</code></pre>
-    </blockquote>
-</div>
+document.querySelector("#id .classname tagname");
 ```
 
 #### [.classname #id tagname] ####
