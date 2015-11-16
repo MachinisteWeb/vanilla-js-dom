@@ -108,8 +108,11 @@ The much faster method:
         - [Trigger](#trigger)
     - [FILTERS](#filters)
         - [Filter](#filter)
+        - [First](#first)
         - [Item](#item)
+        - [Last](#last)
         - [Matches Selector](#matches-selector)
+        - [Slice](#slice)
     - [UTILS](#utils)
         - [Array Each](#array-each)
         - [Change Futur Context](#change-futur-context)
@@ -1266,6 +1269,21 @@ to Vanilla JS
 
 ```js
 <node>.matches(<selector>);
+```
+
+#### Slice ####
+
+From jQuery
+
+```js
+$(&lt;selector>).slice(<startIndex>, <endIndex>);
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.querySelectorAll(&lt;selector>);
+[].slice.call(nodeList, <startIndex>, <endIndex>);
 ```
 
 
