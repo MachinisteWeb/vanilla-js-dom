@@ -591,13 +591,13 @@ var temp = document.getElementsByTagName(<node>)[0],
 From jQuery
 
 ```js
-$.contains(<node>, <childrenElements>);
+$.contains(<node>, <childNode>);
 ```
 
 to Vanilla JS
 
 ```js
-(<node> !== <childrenElements>) && <node>.contains(<childrenElements>);
+(<node> !== <childNode>) && <node>.contains(<childNode>);
 ```
 
 #### Empty ####
@@ -645,13 +645,13 @@ nodeList = [].filter.call(nodeList, function (node) {
 From jQuery
 
 ```js
-$(<node>).find(<childrenElements>);
+$(<node>).find(<childrenSelector>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.querySelectorAll(<childrenElements>);
+<node>.querySelectorAll(<childrenSelector>);
 ```
 
 #### Get Attributes ####
