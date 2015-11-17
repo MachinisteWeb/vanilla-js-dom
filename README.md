@@ -201,6 +201,24 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 
 ## From jQuery to Vanilla JS ##
 
+**Légende**
+
+Understand each type of DOM Object:
+
+```html
+<div class="example">
+  <span>Html Element</span>
+  <!-- Comment Element -->
+  Text Element
+  <span>Un Html Element</span>
+</div>
+```
+
+- `querySelector(".example")` return a `HTMLElement`.
+- `querySelector(".example").children` return a `HTMLCollection`, each collection's item is a `HTMLElement`, two `[span, span]` here.
+- `querySelector(".example").childNodes` return a `NodeList`, each collection's item is a `Node`, seven `[text, span, text, comment, text, span, text]` here.
+- `querySelector(".example").childNodes[0]` return a `Node` of `typeNode` 3, as a text. (`...nodeList[3]` is `typeNode` 8 as a comment).
+
 ### .Selector #Dom ###
 
 #### #id ####
