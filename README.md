@@ -1500,7 +1500,7 @@ to Vanilla JS
 function parseHTML(htmlString) {
     var body = document.implementation.createHTMLDocument().body;
     body.innerHTML = htmlString;
-    return body.children;
+    return body.childNodes;
 }
 
 parseHTML(<htmlString>);
@@ -1518,6 +1518,24 @@ to Vanilla JS
 
 ```js
 JSON.parse(<jsonString>);
+```
+
+#### Parse XML ####
+
+From jQuery
+
+```js
+$.parseXML(<htmlString>);
+```
+
+to Vanilla JS
+
+```js
+function parseXML(htmlString) {
+    return (new DOMParser()).parseFromString(htmlString,"text/xml");
+}
+
+parseXML(&lt;htmlString>);
 ```
 
 #### Trim ####
