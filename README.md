@@ -537,13 +537,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).append(<movedElement>);
+$(<htmlElement>).append(<movedHtmlElement>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.appendChild(<movedElement>);
+<htmlElement>.appendChild(<movedHtmlElement>);
 // <htmlElement>.insertAdjacentHTML("beforeEnd", "<htmlString>");
 ```
 
@@ -906,13 +906,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).prepend(<movedElement>);
+$(<htmlElement>).prepend(<movedHtmlElement>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.insertBefore(<movedElement>, <htmlElement>.firstChild);
+<htmlElement>.insertBefore(<movedHtmlElement>, <htmlElement>.firstChild);
 // <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
 ```
 
