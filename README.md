@@ -244,8 +244,8 @@ $("#id .classname tagname").each(function (i, element) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll("#id .classname tagname");
-[].forEach.call(nodeList, function (element) {
+var collection = document.querySelectorAll("#id .classname tagname");
+[].forEach.call(collection, function (element) {
     element;
 });
 ```
@@ -263,8 +263,8 @@ $(".classname").each(function (i, element) {
 to Vanilla JS
 
 ```js
-var nodeList = document.getElementsByClassName(".classname");
-[].forEach.call(nodeList, function (element) {
+var collection = document.getElementsByClassName(".classname");
+[].forEach.call(collection, function (element) {
     element;
 });
 ```
@@ -282,8 +282,8 @@ $("tagname").each(function (i, element) {
 to Vanilla JS
 
 ```js
-var nodeList = document.getElementsByTagName("tagname");
-[].forEach.call(nodeList, function (element) {
+var collection = document.getElementsByTagName("tagname");
+[].forEach.call(collection, function (element) {
     element;
 });
 ```
@@ -1218,13 +1218,13 @@ $(<selector>).filter(function (i, element) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(<selector>);
+var collection = document.querySelectorAll(<selector>);
 
-nodeList = [].filter.call(nodeList, function (element) {
+collection = [].filter.call(collection, function (element) {
     return <filterCondition>;
 });
 
-[].forEach.call(nodeList, function (element) {
+[].forEach.call(collection, function (element) {
     element;
 });
 ```
@@ -1240,8 +1240,8 @@ $(<selector>).first();
 to Vanilla JS
 
 ```js
-<nodeList>.item(0);
-// <nodeList>[0]
+<collection>.item(0);
+// <collection>[0]
 ```
 
 #### Has ####
@@ -1255,8 +1255,8 @@ $(<selector>).has(<matchesChildSelector>);
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(<selector>);
-[].filter.call(nodeList, function (element) {
+var collection = document.querySelectorAll(<selector>);
+[].filter.call(collection, function (element) {
     return element.querySelector(<matchesChildSelector>);
 });
 ```
@@ -1272,8 +1272,8 @@ $(<selector>).is(<matchesSelector>);
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(<selector>);
-[].some.call(nodeList, function (element) {
+var collection = document.querySelectorAll(<selector>);
+[].some.call(collection, function (element) {
     return element.matches(<matchesSelector>);
 });
 ```
@@ -1289,8 +1289,8 @@ $(<selector>).eq(<index>);
 to Vanilla JS
 
 ```js
-<nodeList>.item(<index>);
-// <nodeList>[<index>]
+<collection>.item(<index>);
+// <collection>[<index>]
 ```
 
 #### Last ####
@@ -1304,8 +1304,8 @@ $(<selector>).last();
 to Vanilla JS
 
 ```js
-<nodeList>.item(<nodeList>.length - 1);
-// <nodeList>[<nodeList>.length - 1]
+<collection>.item(<collection>.length - 1);
+// <collection>[<collection>.length - 1]
 ```
 
 #### Not ####
@@ -1319,8 +1319,8 @@ $(<selector>).not(<matchesSelector>);
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(<selector>);
-[].forEach.call(nodeList, function (element) {
+var collection = document.querySelectorAll(<selector>);
+[].forEach.call(collection, function (element) {
     return !element.matches(<matchesSelector>);
 });
 ```
@@ -1336,8 +1336,8 @@ $(&lt;selector>).slice(<startIndex>, <endIndex>);
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(&lt;selector>);
-[].slice.call(nodeList, <startIndex>, <endIndex>);
+var collection = document.querySelectorAll(&lt;selector>);
+[].slice.call(collection, <startIndex>, <endIndex>);
 ```
 
 
