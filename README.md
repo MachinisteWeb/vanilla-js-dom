@@ -208,13 +208,13 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 From jQuery
 
 ```js
-var node = $("#id")[0];
+var element = $("#id")[0];
 ```
 
 to Vanilla JS
 
 ```js
-var node = document.getElementById("id");
+var element = document.getElementById("id");
 ```
 
 #### .classname #id tagname ####
@@ -222,7 +222,7 @@ var node = document.getElementById("id");
 From jQuery
 
 ```js
-var node = $("#id .classname tagname")[0];
+var element = $("#id .classname tagname")[0];
 ```
 
 to Vanilla JS
@@ -236,8 +236,8 @@ document.querySelector("#id .classname tagname");
 From jQuery
 
 ```js
-$("#id .classname tagname").each(function (i, node) {
-    node;
+$("#id .classname tagname").each(function (i, element) {
+    element;
 });
 ```
 
@@ -245,8 +245,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.querySelectorAll("#id .classname tagname");
-[].forEach.call(nodeList, function (node) {
-    node;
+[].forEach.call(nodeList, function (element) {
+    element;
 });
 ```
 
@@ -255,8 +255,8 @@ var nodeList = document.querySelectorAll("#id .classname tagname");
 From jQuery
 
 ```js
-$(".classname").each(function (i, node) {
-    node;
+$(".classname").each(function (i, element) {
+    element;
 });
 ```
 
@@ -264,8 +264,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.getElementsByClassName(".classname");
-[].forEach.call(nodeList, function (node) {
-    node;
+[].forEach.call(nodeList, function (element) {
+    element;
 });
 ```
 
@@ -274,8 +274,8 @@ var nodeList = document.getElementsByClassName(".classname");
 From jQuery
 
 ```js
-$("tagname").each(function (i, node) {
-    node;
+$("tagname").each(function (i, element) {
+    element;
 });
 ```
 
@@ -283,8 +283,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.getElementsByTagName("tagname");
-[].forEach.call(nodeList, function (node) {
-    node;
+[].forEach.call(nodeList, function (element) {
+    element;
 });
 ```
 
@@ -452,10 +452,10 @@ request(&gt;url>, function (err, response) {
 From jQuery
 
 ```js
-function fadeIn($node, speed, next) {
-    $node.css("opacity", "0").animate({ opacity: 1 }, speed, next);
+function fadeIn($element, speed, next) {
+    $element.css("opacity", "0").animate({ opacity: 1 }, speed, next);
 }
-fadeIn($(<node>), 2000, function () {
+fadeIn($(<element>), 2000, function () {
   $(this).css("opacity", "");
 });
 ```
@@ -463,25 +463,25 @@ fadeIn($(<node>), 2000, function () {
 to Vanilla JS
 
 ```js
-function fadeIn(node, speed, next) {
+function fadeIn(element, speed, next) {
     var last = +new Date(),
         tick = function () {
-            node.style.opacity = +node.style.opacity + (new Date() - last) / speed;
+            element.style.opacity = +element.style.opacity + (new Date() - last) / speed;
 
             last = +new Date();
 
-            if (+node.style.opacity < 1) {
+            if (+element.style.opacity < 1) {
                 requestAnimationFrame(tick);
             } else if (next) {
-                next.call(node);
+                next.call(element);
             }
         };
 
-    node.style.opacity = 0;
+    element.style.opacity = 0;
     tick();
 }
 
-fadeIn(<node>, 2000, function () {
+fadeIn(<element>, 2000, function () {
     this.style.opacity = '';
 });
 ```
@@ -491,13 +491,13 @@ fadeIn(<node>, 2000, function () {
 From jQuery
 
 ```js
-$(<node>).hide();
+$(<element>).hide();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.style.display = "none";
+<element>.style.display = "none";
 ```
 
 #### Show ####
@@ -505,13 +505,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).show();
+$(<element>).show();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.style.display = "";
+<element>.style.display = "";
 ```
 
 
@@ -523,13 +523,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).addClass(<className>);
+$(<element>).addClass(<className>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.classList.add(<className>);
+<element>.classList.add(<className>);
 ```
 
 #### Append ####
@@ -537,14 +537,14 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).append(<movedElement>);
+$(<element>).append(<movedElement>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.appendChild(<movedElement>);
-// <node>.insertAdjacentHTML("beforeEnd", "<htmlString>");
+<element>.appendChild(<movedElement>);
+// <element>.insertAdjacentHTML("beforeEnd", "<htmlString>");
 ```
 
 #### Children ####
@@ -552,13 +552,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).children();
+$(<element>).children();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.children;
+<element>.children;
 ```
 
 #### Clone ####
@@ -566,13 +566,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).clone();
+$(<element>).clone();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.cloneNode(true);
+<element>.cloneNode(true);
 ```
 
 #### Compare ####
@@ -601,13 +601,13 @@ var temp = document.getElementsByTagName(<selectorToFirstNode>)[0],
 From jQuery
 
 ```js
-$.contains(<node>, <childNode>);
+$.contains(<element>, <childNode>);
 ```
 
 to Vanilla JS
 
 ```js
-(<node> !== <childNode>) && <node>.contains(<childNode>);
+(<element> !== <childNode>) && <element>.contains(<childNode>);
 ```
 
 #### Empty ####
@@ -615,13 +615,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).empty();
+$(<element>).empty();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.innerHTML = "";
+<element>.innerHTML = "";
 ```
 
 #### Find Children ####
@@ -629,13 +629,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).find(<childrenSelector>);
+$(<element>).find(<childrenSelector>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.querySelectorAll(<childrenSelector>);
+<element>.querySelectorAll(<childrenSelector>);
 ```
 
 #### Get Attribute ####
@@ -643,13 +643,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).attr(<attributeName>);
+$(<element>).attr(<attributeName>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.getAttribute(<attributeName>);
+<element>.getAttribute(<attributeName>);
 ```
 
 #### Get Data ####
@@ -657,13 +657,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).data(<dataName>);
+$(<element>).data(<dataName>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.getAttribute(<"data-" + dataName>);
+<element>.getAttribute(<"data-" + dataName>);
 ```
 
 #### Get HTML ####
@@ -671,13 +671,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).html();
+$(<element>).html();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.innerHTML;
+<element>.innerHTML;
 ```
 
 #### Get Node HTML ####
@@ -685,13 +685,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$("<div>").append($(<node>).clone()).html();
+$("<div>").append($(<element>).clone()).html();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.outerHTML;
+<element>.outerHTML;
 ```
 
 #### Get Style ####
@@ -699,13 +699,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).css(<property>);
+$(<element>).css(<property>);
 ```
 
 to Vanilla JS
 
 ```js
-getComputedStyle(<node>)[<property>];
+getComputedStyle(<element>)[<property>];
 ```
 
 #### Get Text ####
@@ -713,13 +713,13 @@ getComputedStyle(<node>)[<property>];
 From jQuery
 
 ```js
-$(<node>).text();
+$(<element>).text();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.textContent;
+<element>.textContent;
 ```
 
 #### Has Class ####
@@ -727,13 +727,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).hasClass(<className>);
+$(<element>).hasClass(<className>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.classList.contains(<className>);
+<element>.classList.contains(<className>);
 ```
 
 #### Insert After ####
@@ -741,13 +741,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).after(<htmlString>);
+$(<element>).after(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.insertAdjacentHTML("afterend", <htmlString>);
+<element>.insertAdjacentHTML("afterend", <htmlString>);
 ```
 
 #### Insert Before ####
@@ -755,13 +755,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).before(<htmlString>);
+$(<element>).before(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.insertAdjacentHTML("beforebegin", <htmlString>);
+<element>.insertAdjacentHTML("beforebegin", <htmlString>);
 ```
 
 #### Matches Selector ####
@@ -769,13 +769,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).is(<selector>);
+$(<element>).is(<selector>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.matches(<selector>);
+<element>.matches(<selector>);
 ```
 
 #### Next ####
@@ -783,13 +783,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).next();
+$(<element>).next();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.nextElementSibling;
+<element>.nextElementSibling;
 ```
 
 #### Offset from Document ####
@@ -797,13 +797,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).offset();
+$(<element>).offset();
 ```
 
 to Vanilla JS
 
 ```js
-var rect = <node>.getBoundingClientRect()
+var rect = <element>.getBoundingClientRect()
 {
     top: rect.top + document.body.scrollTop,
     left: rect.left + document.body.scrollLeft
@@ -815,15 +815,15 @@ var rect = <node>.getBoundingClientRect()
 From jQuery
 
 ```js
-$(<node>).position();
+$(<element>).position();
 ```
 
 to Vanilla JS
 
 ```js
 {
-    left: <node>.offsetLeft,
-    top: <node>.offsetTop
+    left: <element>.offsetLeft,
+    top: <element>.offsetTop
 }
 ```
 
@@ -832,13 +832,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).offset();
+$(<element>).offset();
 ```
 
 to Vanilla JS
 
 ```js
-var rect = <node>.getBoundingClientRect()
+var rect = <element>.getBoundingClientRect()
 {
     top: rect.top + document.body.scrollTop,
     left: rect.left + document.body.scrollLeft
@@ -850,13 +850,13 @@ var rect = <node>.getBoundingClientRect()
 From jQuery
 
 ```js
-$(<node>).outerHeight();
+$(<element>).outerHeight();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.offsetHeight
+<element>.offsetHeight
 ```
 
 #### Outer Width ####
@@ -864,13 +864,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).outerWidth();
+$(<element>).outerWidth();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.offsetWidth
+<element>.offsetWidth
 ```
 
 #### Parent ####
@@ -878,13 +878,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).parent();
+$(<element>).parent();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.parentNode;
+<element>.parentNode;
 ```
 
 #### Parent Not Static ####
@@ -892,13 +892,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).offsetParent();
+$(<element>).offsetParent();
 ```
 
 to Vanilla JS
 
 ```js
-(<node>.offsetParent || <node>)
+(<element>.offsetParent || <element>)
 ```
 
 #### Prepend ####
@@ -906,14 +906,14 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).prepend(<movedElement>);
+$(<element>).prepend(<movedElement>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.insertBefore(<movedElement>, <node>.firstChild);
-// <node>.insertAdjacentHTML("afterBegin", "<htmlString>");
+<element>.insertBefore(<movedElement>, <element>.firstChild);
+// <element>.insertAdjacentHTML("afterBegin", "<htmlString>");
 ```
 
 #### Prev ####
@@ -921,13 +921,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).prev();
+$(<element>).prev();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.previousElementSibling;
+<element>.previousElementSibling;
 ```
 
 #### Remove Class ####
@@ -935,13 +935,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).remove();
+$(<element>).remove();
 ```
 
 to Vanilla JS
 
 ```js
-<node>.parentNode.removeChild(<node>);
+<element>.parentNode.removeChild(<element>);
 ```
 
 #### Remove Class ####
@@ -949,13 +949,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).removeClass(<className>);
+$(<element>).removeClass(<className>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.classList.remove(<className>);
+<element>.classList.remove(<className>);
 ```
 
 #### Set Attribute ####
@@ -963,13 +963,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).attr(<attributeName>, <value>);
+$(<element>).attr(<attributeName>, <value>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.setAttribute(<attributeName>, <value>);
+<element>.setAttribute(<attributeName>, <value>);
 ```
 
 #### Set Data ####
@@ -977,13 +977,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).data(<dataName>, <value>);
+$(<element>).data(<dataName>, <value>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.setAttribute(<"data-" + dataName>, <value>);
+<element>.setAttribute(<"data-" + dataName>, <value>);
 ```
 
 #### Set HTML ####
@@ -991,13 +991,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).html(<htmlString>);
+$(<element>).html(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.innerHTML = <htmlString>;
+<element>.innerHTML = <htmlString>;
 ```
 
 #### Set Node HTML ####
@@ -1005,13 +1005,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).replaceWith(<htmlString>);
+$(<element>).replaceWith(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.outerHTML = <htmlString>;
+<element>.outerHTML = <htmlString>;
 ```
 
 #### Set Style ####
@@ -1019,13 +1019,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).css(<property>, <value>);
+$(<element>).css(<property>, <value>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.style.<property> = <value>;
+<element>.style.<property> = <value>;
 ```
 
 #### Set Text ####
@@ -1033,13 +1033,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).text(<string>);
+$(<element>).text(<string>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.textContent = <string>;
+<element>.textContent = <string>;
 ```
 
 #### Siblings ####
@@ -1047,14 +1047,14 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).siblings();
+$(<element>).siblings();
 ```
 
 to Vanilla JS
 
 ```js
-[].filter.call(<node>.parentNode.children, function (node) {
-    return node !== <node>;
+[].filter.call(<element>.parentNode.children, function (element) {
+    return element !== <element>;
 });
 ```
 
@@ -1063,13 +1063,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).toggleClass(<className>);
+$(<element>).toggleClass(<className>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.classList.toggle(<className>);
+<element>.classList.toggle(<className>);
 ```
 
 
@@ -1081,14 +1081,14 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).hover(<eventHandlerMouseIn>, <eventHandlerMouseOut>);
+$(<element>).hover(<eventHandlerMouseIn>, <eventHandlerMouseOut>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.addEventListener("mouseenter", <eventHandlerMouseIn>);
-<node>.addEventListener("mouseleave", <eventHandlerMouseOut>);
+<element>.addEventListener("mouseenter", <eventHandlerMouseIn>);
+<element>.addEventListener("mouseleave", <eventHandlerMouseOut>);
 ```
 
 #### Load ####
@@ -1114,13 +1114,13 @@ window.addEventListener("load", function () {
 From jQuery
 
 ```js
-$(<node>).off(<eventName>, <eventHandler>);
+$(<element>).off(<eventName>, <eventHandler>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.removeEventListener(<eventName>, <eventHandler>);
+<element>.removeEventListener(<eventName>, <eventHandler>);
 ```
 
 #### On ####
@@ -1128,13 +1128,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).on(<eventName>, <eventHandler>);
+$(<element>).on(<eventName>, <eventHandler>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.addEventListener(<eventName>, <eventHandler>);
+<element>.addEventListener(<eventName>, <eventHandler>);
 ```
 
 #### One ####
@@ -1142,13 +1142,13 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<node>).one(<eventName>, <eventHandler>);
+$(<element>).one(<eventName>, <eventHandler>);
 ```
 
 to Vanilla JS
 
 ```js
-<node>.addEventListener(<eventName>, function callee(event) {
+<element>.addEventListener(<eventName>, function callee(event) {
     event.target.removeEventListener(e.type, callee);
 });
 ```
@@ -1179,11 +1179,11 @@ From jQuery
 var event = jQuery.Event("click");
 event.test = true;
 
-$(<node>).click(function (event) {
+$(<element>).click(function (event) {
     event.test; // undefined by click, true by trigger.
 });
-$(<node>).trigger(event);
-// $(<node>).trigger("click"); // Shortcut without test property.
+$(<element>).trigger(event);
+// $(<element>).trigger("click"); // Shortcut without test property.
 ```
 
 to Vanilla JS
@@ -1193,10 +1193,10 @@ var event = document.createEvent("HTMLEvents");
 event.initEvent("click", true, false);
 event.test = true;
 
-<node>.addEventListener("click", function (event) {
+<element>.addEventListener("click", function (event) {
     event.test; // undefined by click, true by trigger.
 });
-<node>.dispatchEvent(event);
+<element>.dispatchEvent(event);
 ```
 
 
@@ -1208,10 +1208,10 @@ event.test = true;
 From jQuery
 
 ```js
-$(<selector>).filter(function (i, node) {
+$(<selector>).filter(function (i, element) {
     return <filterCondition>;
-}).each(function (i, node) {
-    node;
+}).each(function (i, element) {
+    element;
 });
 ```
 
@@ -1220,12 +1220,12 @@ to Vanilla JS
 ```js
 var nodeList = document.querySelectorAll(<selector>);
 
-nodeList = [].filter.call(nodeList, function (node) {
+nodeList = [].filter.call(nodeList, function (element) {
     return <filterCondition>;
 });
 
-[].forEach.call(nodeList, function (node) {
-    node;
+[].forEach.call(nodeList, function (element) {
+    element;
 });
 ```
 
@@ -1256,8 +1256,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.querySelectorAll(<selector>);
-[].filter.call(nodeList, function (node) {
-    return node.querySelector(<matchesChildSelector>);
+[].filter.call(nodeList, function (element) {
+    return element.querySelector(<matchesChildSelector>);
 });
 ```
 
@@ -1273,8 +1273,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.querySelectorAll(<selector>);
-[].some.call(nodeList, function (node) {
-    return node.matches(<matchesSelector>);
+[].some.call(nodeList, function (element) {
+    return element.matches(<matchesSelector>);
 });
 ```
 
@@ -1320,8 +1320,8 @@ to Vanilla JS
 
 ```js
 var nodeList = document.querySelectorAll(<selector>);
-[].forEach.call(nodeList, function (node) {
-    return !node.matches(<matchesSelector>);
+[].forEach.call(nodeList, function (element) {
+    return !element.matches(<matchesSelector>);
 });
 ```
 
