@@ -370,7 +370,7 @@ function getJSON(url, next) {
     });
 
     request.addEventListener("error", function () {
-        return next(new Error("There was a connection error of some sort."));
+        next(new Error("There was a connection error of some sort."));
     });
 }
 
