@@ -210,7 +210,7 @@ Understand each type of DOM Object:
   <span>Html Element</span>
   <!-- Comment Element -->
   Text Element
-  <span>Un Html Element</span>
+  <span>Html Element</span>
 </div>
 ```
 
