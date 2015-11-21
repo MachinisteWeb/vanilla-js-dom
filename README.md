@@ -1,5 +1,7 @@
 # Vanilla JS #
 
+[![Faites un don](https://img.shields.io/badge/don-%E2%9D%A4-ddddff.svg)](https://www.paypal.me/BrunoLesieur/5) [![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Haeresis/NodeAtlas) [![Version 1.8.5](https://img.shields.io/badge/version-1.8.5-brightgreen.svg)](https://github.com/Haeresis/NodeAtlas) [![Technical Debt Ratio](https://img.shields.io/badge/debt_ratio-0%25-brightgreen.svg)](http://docs.sonarqube.org/display/PLUG/JavaScript+Plugin)
+
 **Vous êtes français ? Le README [derrière ce lien](http://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
 
