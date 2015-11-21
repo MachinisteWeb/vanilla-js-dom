@@ -1,31 +1,26 @@
 {
-  "name": "vanilla-js",
-  "preferGlobal": true,
-  "version": "6.0.0",
-  "author": {
-    "name": "Bruno Lesieur",
-    "email": "bruno.lesieur@gmail.com"
-  },
+  "name": "vanilla-js-dom",
+  "version": "1.8.5",
   "description": "Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.",
-  "private": false,
+  "main": "vanilla.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Haeresis/vanilla-js.git"
+    "url": "git+https://github.com/Haeresis/vanilla-js.git"
   },
   "keywords": [
-    "framework",
-    "vanilla js",
     "javascript",
+    "vanilla-js",
     "native",
-    "fast"
+    "fast",
+    "proto-framework"
   ],
+  "author": "Haeresis",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/Haeresis/vanilla-js/issues"
   },
-  "main": "vanilla.js",
-  "engines": {
-    "node": ">=0.10"
-  },
-  "readmeFilename": "README.md"
+  "homepage": "https://github.com/Haeresis/vanilla-js#readme"
 }
