@@ -235,7 +235,7 @@ var htmlElement = $("#id")[0];
 to Vanilla JS
 
 ```js
-var htmlElement = document.getElementById("id");
+var htmlElement = document.getElementById("id"); // Live
 ```
 
 #### .classname #id tagname ####
@@ -249,7 +249,7 @@ var htmlElement = $("#id .classname tagname")[0];
 to Vanilla JS
 
 ```js
-document.querySelector("#id .classname tagname");
+document.querySelector("#id .classname tagname"); // Not Live (Static)
 ```
 
 #### [.classname #id tagname] ####
@@ -265,7 +265,7 @@ $("#id .classname tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll("#id .classname tagname");
+var nodeList = document.querySelectorAll("#id .classname tagname"); // Not Live (Static)
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -284,7 +284,7 @@ $(".classname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByClassName(".classname");
+var htmlCollection = document.getElementsByClassName(".classname"); // Live
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
@@ -303,7 +303,7 @@ $('[name="name"]').each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var nodeList = document.getElementsByName("name");
+var nodeList = document.getElementsByName("name"); // Live
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -322,7 +322,7 @@ $("tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByTagName("tagname");
+var htmlCollection = document.getElementsByTagName("tagname"); // Live
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
