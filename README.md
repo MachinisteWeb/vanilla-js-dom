@@ -52,6 +52,7 @@ The much faster method:
         - [.classname #id tagname](#classname-id-tagname)
         - [[.classname #id tagname]](#classname-id-tagname-1)
         - [[.classname]](#classname)
+        - [[name]](#name)
         - [[tagname]](#tagname)
     - [AJAX](#ajax)
         - [GET](#get)
@@ -264,9 +265,9 @@ $("#id .classname tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll("#id .classname tagname");
-[].forEach.call(htmlCollection, function (htmlElement) {
-    htmlElement;
+var nodeList = document.querySelectorAll("#id .classname tagname");
+[].forEach.call(nodeList, function (node) {
+    node;
 });
 ```
 
@@ -286,6 +287,25 @@ to Vanilla JS
 var htmlCollection = document.getElementsByClassName(".classname");
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
+});
+```
+
+#### [name] ####
+
+From jQuery
+
+```js
+$('[name="name"]').each(function (i, htmlElement) {
+    htmlElement;
+});
+```
+
+to Vanilla JS
+
+```js
+var nodeList = document.getElementsByName("name");
+[].forEach.call(nodeList, function (node) {
+    node;
 });
 ```
 
