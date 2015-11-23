@@ -235,7 +235,7 @@ var htmlElement = $("#id")[0];
 to Vanilla JS
 
 ```js
-var htmlElement = document.getElementById("id"); // Live
+var htmlElement = document.getElementById("id");
 ```
 
 #### .classname #id tagname ####
@@ -249,7 +249,7 @@ var htmlElement = $("#id .classname tagname")[0];
 to Vanilla JS
 
 ```js
-document.querySelector("#id .classname tagname"); // Not Live (Static)
+document.querySelector("#id .classname tagname");
 ```
 
 #### [.classname #id tagname] ####
