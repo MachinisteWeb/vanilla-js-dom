@@ -1260,14 +1260,14 @@ $(<selector>).filter(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll(<selector>);
+var nodeList = document.querySelectorAll(<selector>);
 
-htmlCollection = [].filter.call(htmlCollection, function (htmlElement) {
+nodeList = [].filter.call(nodeList, function (node) {
     return <filterCondition>;
 });
 
-[].forEach.call(htmlCollection, function (htmlElement) {
-    htmlElement;
+[].forEach.call(nodeList, function (node) {
+    node;
 });
 ```
 
@@ -1297,9 +1297,9 @@ $(<selector>).has(<matchesChildSelector>);
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll(<selector>);
-[].filter.call(htmlCollection, function (htmlElement) {
-    return htmlElement.querySelector(<matchesChildSelector>);
+var nodeList = document.querySelectorAll(<selector>);
+[].filter.call(nodeList, function (node) {
+    return node.querySelector(<matchesChildSelector>);
 });
 ```
 
@@ -1314,9 +1314,9 @@ $(<selector>).is(<matchesSelector>);
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll(<selector>);
-[].some.call(htmlCollection, function (htmlElement) {
-    return htmlElement.matches(<matchesSelector>);
+var nodeList = document.querySelectorAll(<selector>);
+[].some.call(nodeList, function (node) {
+    return node.matches(<matchesSelector>);
 });
 ```
 
@@ -1361,9 +1361,9 @@ $(<selector>).not(<matchesSelector>);
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll(<selector>);
-[].forEach.call(htmlCollection, function (htmlElement) {
-    return !htmlElement.matches(<matchesSelector>);
+var nodeList = document.querySelectorAll(<selector>);
+[].forEach.call(nodeList, function (node) {
+    return !node.matches(<matchesSelector>);
 });
 ```
 
@@ -1378,8 +1378,8 @@ $(&lt;selector>).slice(<startIndex>, <endIndex>);
 to Vanilla JS
 
 ```js
-var htmlCollection = document.querySelectorAll(&lt;selector>);
-[].slice.call(htmlCollection, <startIndex>, <endIndex>);
+var nodeList = document.querySelectorAll(&lt;selector>);
+[].slice.call(nodeList, <startIndex>, <endIndex>);
 ```
 
 
