@@ -72,31 +72,6 @@ The much faster method:
         - [Animation](#animation)
         - [Hide](#hide)
         - [Show](#show)
-    - [ELEMENTS](#elements)
-        - [Append](#append)
-        - [Children](#children)
-        - [Clone](#clone)
-        - [Compare](#compare)
-        - [Contains](#contains)
-        - [Empty](#empty)
-        - [Find Children](#find-children)
-        - [Get HTML](#get-html)
-        - [Get Node HTML](#get-node-html)
-        - [Get Text](#get-text)
-        - [Insert After](#insert-after)
-        - [Insert Before](#insert-before)
-        - [Matches Selector](#matches-selector)
-        - [Next](#next)
-        - [NextAll](#nextall)
-        - [Parent](#parent)
-        - [Prepend](#prepend)
-        - [Prev](#prev)
-        - [PrevAll](#prevall)
-        - [Remove Node](#remove-node)
-        - [Set HTML](#set-html)
-        - [Set Node HTML](#set-node-html)
-        - [Set Text](#set-text)
-        - [Siblings](#siblings)
     - [EVENTS](#events)
         - [Hover](#hover)
         - [Load](#load)
@@ -114,6 +89,32 @@ The much faster method:
         - [Last](#last)
         - [Not](#not)
         - [Slice](#slice)
+    - [MANIPULATION]
+        - [Append](#append)
+        - [Clone](#clone)
+        - [Compare](#compare)
+        - [Contains](#contains)
+        - [Empty](#empty)
+        - [Get HTML](#get-html)
+        - [Get Node HTML](#get-node-html)
+        - [Get Text](#get-text)
+        - [Insert After](#insert-after)
+        - [Insert Before](#insert-before)
+        - [Prepend](#prepend)
+        - [Remove Node](#remove-node)
+        - [Set HTML](#set-html)
+        - [Set Node HTML](#set-node-html)
+        - [Set Text](#set-text)
+    - [TRAVERSING]
+        - [Children](#children)
+        - [Find Children](#find-children)
+        - [Matches Selector](#matches-selector)
+        - [Next](#next)
+        - [NextAll](#nextall)
+        - [Parent](#parent)
+        - [Prev](#prev)
+        - [PrevAll](#prevall)
+        - [Siblings](#siblings)
     - [STYLES](#styles)
         - [Get Style](#get-style)
         - [Offset from Document](#offset-from-document)
@@ -680,365 +681,6 @@ to Vanilla JS
 
 
 
-### ELEMENTS ###
-
-#### Append ####
-
-From jQuery
-
-```js
-$(<htmlElement>).append(<movedHtmlElement>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.appendChild(<movedHtmlElement>);
-// <htmlElement>.insertAdjacentHTML("beforeEnd", "<htmlString>");
-```
-
-#### Children ####
-
-From jQuery
-
-```js
-$(<htmlElement>).children();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.children;
-```
-
-#### Clone ####
-
-From jQuery
-
-```js
-$(<htmlElement>).clone();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.cloneNode(true);
-```
-
-#### Compare ####
-
-From jQuery
-
-```js
-var $a = $(<selectorToFirstHtmlElement>).find(<selectorToSecondHtmlElement>);
-    $b = $(<selectorToSecondHtmlElement>);
-
-$a.is($b);
-```
-
-to Vanilla JS
-
-```js
-var temp = document.getElementsByTagName(<selectorToFirstHtmlElement>)[0],
-    a = temp.getElementsByTagName(<selectorToSecondHtmlElement>)[0],
-    b = document.querySelector(<selectorToSecondHtmlElement>);
-
-(a === b);
-```
-
-#### Contains ####
-
-From jQuery
-
-```js
-$.contains(<htmlElement>, <childHtmlElement>);
-```
-
-to Vanilla JS
-
-```js
-(<htmlElement> !== <childHtmlElement>) && <htmlElement>.contains(<childHtmlElement>);
-```
-
-#### Empty ####
-
-From jQuery
-
-```js
-$(<htmlElement>).empty();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.innerHTML = "";
-```
-
-#### Find Children ####
-
-From jQuery
-
-```js
-$(<htmlElement>).find(<childrenSelector>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.querySelectorAll(<childrenSelector>);
-```
-
-#### Get HTML ####
-
-From jQuery
-
-```js
-$(<htmlElement>).html();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.innerHTML;
-```
-
-#### Get Node HTML ####
-
-From jQuery
-
-```js
-$("<div>").append($(<htmlElement>).clone()).html();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.outerHTML;
-```
-
-#### Get Text ####
-
-From jQuery
-
-```js
-$(<htmlElement>).text();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.textContent;
-```
-
-#### Insert After ####
-
-From jQuery
-
-```js
-$(<htmlElement>).after(<htmlString>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.insertAdjacentHTML("afterend", <htmlString>);
-```
-
-#### Insert Before ####
-
-From jQuery
-
-```js
-$(<htmlElement>).before(<htmlString>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.insertAdjacentHTML("beforebegin", <htmlString>);
-```
-
-#### Matches Selector ####
-
-From jQuery
-
-```js
-$(<htmlElement>).is(<selector>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.matches(<selector>);
-```
-
-#### Next ####
-
-From jQuery
-
-```js
-$(<htmlElement>).next();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.nextElementSibling; // HTMLCollection
-// &lt;htmlElement>.nextSibling; // NodeList
-```
-
-#### NextAll ####
-
-From jQuery
-
-```js
-$(<htmlElement>).nextAll();
-```
-
-to Vanilla JS
-
-```js
-var nextAll = false;
-nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement.previousElementSibling === <htmlElement>) ? nextAll = true : nextAll;
-});
-```
-
-#### Parent ####
-
-From jQuery
-
-```js
-$(<htmlElement>).parent();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.parentNode;
-```
-
-#### Prepend ####
-
-From jQuery
-
-```js
-$(<htmlElement>).prepend(<movedHtmlElement>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.insertBefore(<movedHtmlElement>, <htmlElement>.firstChild);
-// <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
-```
-
-#### Prev ####
-
-From jQuery
-
-```js
-$(<htmlElement>).prev();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.previousElementSibling; // HTMLCollection
-// &lt;htmlElement>.previousSibling // NodeList;
-```
-
-#### PrevAll ####
-
-From jQuery
-
-```js
-$(<htmlElement>).prevAll();
-```
-
-to Vanilla JS
-
-```js
-var prevAll = true;
-prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement === <htmlElement>) ? prevAll = false : prevAll;
-});
-```
-
-#### Remove Node ####
-
-From jQuery
-
-```js
-$(<htmlElement>).remove();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.parentNode.removeChild(<htmlElement>);
-```
-
-#### Set HTML ####
-
-From jQuery
-
-```js
-$(<htmlElement>).html(<htmlString>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.innerHTML = <htmlString>;
-```
-
-#### Set Node HTML ####
-
-From jQuery
-
-```js
-$(<htmlElement>).replaceWith(<htmlString>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.outerHTML = <htmlString>;
-```
-
-#### Set Text ####
-
-From jQuery
-
-```js
-$(<htmlElement>).text(<string>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.textContent = <string>;
-```
-
-#### Siblings ####
-
-From jQuery
-
-```js
-$(<htmlElement>).siblings();
-```
-
-to Vanilla JS
-
-```js
-[].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
-    return htmlElement !== <htmlElement>;
-});
-```
-
-
-
 ### EVENTS ###
 
 #### Hover ####
@@ -1305,6 +947,369 @@ to Vanilla JS
 ```js
 var nodeList = document.querySelectorAll(&lt;selector>);
 [].slice.call(nodeList, <startIndex>, <endIndex>);
+```
+
+
+
+### MANIPULATION ###
+
+#### Append ####
+
+From jQuery
+
+```js
+$(<htmlElement>).append(<movedHtmlElement>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.appendChild(<movedHtmlElement>);
+// <htmlElement>.insertAdjacentHTML("beforeEnd", "<htmlString>");
+```
+
+#### Clone ####
+
+From jQuery
+
+```js
+$(<htmlElement>).clone();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.cloneNode(true);
+```
+
+#### Compare ####
+
+From jQuery
+
+```js
+var $a = $(<selectorToFirstHtmlElement>).find(<selectorToSecondHtmlElement>);
+    $b = $(<selectorToSecondHtmlElement>);
+
+$a.is($b);
+```
+
+to Vanilla JS
+
+```js
+var temp = document.getElementsByTagName(<selectorToFirstHtmlElement>)[0],
+    a = temp.getElementsByTagName(<selectorToSecondHtmlElement>)[0],
+    b = document.querySelector(<selectorToSecondHtmlElement>);
+
+(a === b);
+```
+
+#### Contains ####
+
+From jQuery
+
+```js
+$.contains(<htmlElement>, <childHtmlElement>);
+```
+
+to Vanilla JS
+
+```js
+(<htmlElement> !== <childHtmlElement>) && <htmlElement>.contains(<childHtmlElement>);
+```
+
+#### Empty ####
+
+From jQuery
+
+```js
+$(<htmlElement>).empty();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.innerHTML = "";
+```
+
+#### Get HTML ####
+
+From jQuery
+
+```js
+$(<htmlElement>).html();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.innerHTML;
+```
+
+#### Get Node HTML ####
+
+From jQuery
+
+```js
+$("<div>").append($(<htmlElement>).clone()).html();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.outerHTML;
+```
+
+#### Get Text ####
+
+From jQuery
+
+```js
+$(<htmlElement>).text();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.textContent;
+```
+
+#### Insert After ####
+
+From jQuery
+
+```js
+$(<htmlElement>).after(<htmlString>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.insertAdjacentHTML("afterend", <htmlString>);
+```
+
+#### Insert Before ####
+
+From jQuery
+
+```js
+$(<htmlElement>).before(<htmlString>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.insertAdjacentHTML("beforebegin", <htmlString>);
+```
+
+#### Prepend ####
+
+From jQuery
+
+```js
+$(<htmlElement>).prepend(<movedHtmlElement>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.insertBefore(<movedHtmlElement>, <htmlElement>.firstChild);
+// <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
+```
+
+#### Remove Node ####
+
+From jQuery
+
+```js
+$(<htmlElement>).remove();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.parentNode.removeChild(<htmlElement>);
+```
+
+#### Set HTML ####
+
+From jQuery
+
+```js
+$(<htmlElement>).html(<htmlString>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.innerHTML = <htmlString>;
+```
+
+#### Set Node HTML ####
+
+From jQuery
+
+```js
+$(<htmlElement>).replaceWith(<htmlString>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.outerHTML = <htmlString>;
+```
+
+#### Set Text ####
+
+From jQuery
+
+```js
+$(<htmlElement>).text(<string>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.textContent = <string>;
+```
+
+
+
+### TRAVERSING ###
+
+#### Children ####
+
+From jQuery
+
+```js
+$(<htmlElement>).children();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.children;
+```
+
+#### Find Children ####
+
+From jQuery
+
+```js
+$(<htmlElement>).find(<childrenSelector>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.querySelectorAll(<childrenSelector>);
+```
+
+#### Matches Selector ####
+
+From jQuery
+
+```js
+$(<htmlElement>).is(<selector>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.matches(<selector>);
+```
+
+#### Next ####
+
+From jQuery
+
+```js
+$(<htmlElement>).next();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.nextElementSibling; // HTMLCollection
+// &lt;htmlElement>.nextSibling; // NodeList
+```
+
+#### NextAll ####
+
+From jQuery
+
+```js
+$(<htmlElement>).nextAll();
+```
+
+to Vanilla JS
+
+```js
+var nextAll = false;
+nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement.previousElementSibling === <htmlElement>) ? nextAll = true : nextAll;
+});
+```
+
+#### Parent ####
+
+From jQuery
+
+```js
+$(<htmlElement>).parent();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.parentNode;
+```
+
+#### Prev ####
+
+From jQuery
+
+```js
+$(<htmlElement>).prev();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.previousElementSibling; // HTMLCollection
+// &lt;htmlElement>.previousSibling // NodeList;
+```
+
+#### PrevAll ####
+
+From jQuery
+
+```js
+$(<htmlElement>).prevAll();
+```
+
+to Vanilla JS
+
+```js
+var prevAll = true;
+prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement === <htmlElement>) ? prevAll = false : prevAll;
+});
+```
+
+#### Siblings ####
+
+From jQuery
+
+```js
+$(<htmlElement>).siblings();
+```
+
+to Vanilla JS
+
+```js
+[].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return htmlElement !== <htmlElement>;
+});
 ```
 
 
