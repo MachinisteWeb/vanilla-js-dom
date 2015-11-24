@@ -10,7 +10,7 @@
 
 ## Overview ##
 
-Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
+Vanilla JS is a fast, lightweight, cross-platform tool for building incredible, powerful JavaScript applications.
 
 ### Use in Development ###
 
