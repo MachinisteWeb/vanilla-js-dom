@@ -1291,7 +1291,6 @@ var parents = $(<htmlElement>).parents(<parentSelector>);
 to Vanilla JS
 
 ```js
-<htmlElement>.parentNode;
 var htmlElement = <htmlElement>,
     parents = [];
 while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
