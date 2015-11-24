@@ -59,12 +59,20 @@ The much faster method:
         - [JSON](#json)
         - [POST](#post)
         - [Request / Response](#request--response)
+    - [ATTRIBUTS](#attributs)
+        - [Add Class](#add-class)
+        - [Get Attribute](#get-attribute)
+        - [Get Data](#get-data)
+        - [Has Class](#has-class)
+        - [Remove Class](#remove-class)
+        - [Set Attribute](#set-attribute)
+        - [Set Data](#set-data)
+        - [Toggle Class](#toggle-class)
     - [EFFECTS](#effects)
         - [Animation](#animation)
         - [Hide](#hide)
         - [Show](#show)
     - [ELEMENTS](#elements)
-        - [Add Class](#add-class)
         - [Append](#append)
         - [Children](#children)
         - [Clone](#clone)
@@ -72,13 +80,10 @@ The much faster method:
         - [Contains](#contains)
         - [Empty](#empty)
         - [Find Children](#find-children)
-        - [Get Attribute](#get-attribute)
-        - [Get Data](#get-data)
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
         - [Get Style](#get-style)
         - [Get Text](#get-text)
-        - [Has Class](#has-class)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
         - [Matches Selector](#matches-selector)
@@ -94,16 +99,12 @@ The much faster method:
         - [Prepend](#prepend)
         - [Prev](#prev)
         - [PrevAll](#prevall)
-        - [Remove Class](#remove-class)
-        - [Remove Class](#remove-class)
-        - [Set Attribute](#set-attribute)
-        - [Set Data](#set-data)
+        - [Remove Node](#remove-node)
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Style](#set-style)
         - [Set Text](#set-text)
         - [Siblings](#siblings)
-        - [Toggle Class](#toggle-class)
     - [EVENTS](#events)
         - [Hover](#hover)
         - [Load](#load)
@@ -131,6 +132,7 @@ The much faster method:
         - [Now](#now)
         - [Parse HTML](#parse-html)
         - [Parse JSON](#parse-json)
+        - [Parse XML](#parse-xml)
         - [Trim](#trim)
 
 
@@ -490,6 +492,122 @@ request(&gt;url>, function (err, response) {
 
 
 
+### ATTRIBUTS ###
+
+#### Add Class ####
+
+From jQuery
+
+```js
+$(<htmlElement>).addClass(<className>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.classList.add(<className>);
+```
+
+#### Get Attribute ####
+
+From jQuery
+
+```js
+$(<htmlElement>).attr(<attributeName>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.getAttribute(<attributeName>);
+```
+
+#### Get Data ####
+
+From jQuery
+
+```js
+$(<htmlElement>).data(<dataName>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.getAttribute(<"data-" + dataName>);
+```
+
+#### Has Class ####
+
+From jQuery
+
+```js
+$(<htmlElement>).hasClass(<className>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.classList.contains(<className>);
+```
+
+#### Remove Class ####
+
+From jQuery
+
+```js
+$(<htmlElement>).removeClass(<className>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.classList.remove(<className>);
+```
+
+#### Set Attribute ####
+
+From jQuery
+
+```js
+$(<htmlElement>).attr(<attributeName>, <value>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.setAttribute(<attributeName>, <value>);
+```
+
+#### Set Data ####
+
+From jQuery
+
+```js
+$(<htmlElement>).data(<dataName>, <value>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.setAttribute(<"data-" + dataName>, <value>);
+```
+
+#### Toggle Class ####
+
+From jQuery
+
+```js
+$(<htmlElement>).toggleClass(<className>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.classList.toggle(<className>);
+```
+
+
+
 ### EFFECTS ###
 
 #### Animation ####
@@ -562,20 +680,6 @@ to Vanilla JS
 
 
 ### ELEMENTS ###
-
-#### Add Class ####
-
-From jQuery
-
-```js
-$(<htmlElement>).addClass(<className>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.classList.add(<className>);
-```
 
 #### Append ####
 
@@ -683,34 +787,6 @@ to Vanilla JS
 <htmlElement>.querySelectorAll(<childrenSelector>);
 ```
 
-#### Get Attribute ####
-
-From jQuery
-
-```js
-$(<htmlElement>).attr(<attributeName>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.getAttribute(<attributeName>);
-```
-
-#### Get Data ####
-
-From jQuery
-
-```js
-$(<htmlElement>).data(<dataName>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.getAttribute(<"data-" + dataName>);
-```
-
 #### Get HTML ####
 
 From jQuery
@@ -765,20 +841,6 @@ to Vanilla JS
 
 ```js
 <htmlElement>.textContent;
-```
-
-#### Has Class ####
-
-From jQuery
-
-```js
-$(<htmlElement>).hasClass(<className>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.classList.contains(<className>);
 ```
 
 #### Insert After ####
@@ -1011,7 +1073,7 @@ prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElemen
 });
 ```
 
-#### Remove Class ####
+#### Remove Node ####
 
 From jQuery
 
@@ -1023,48 +1085,6 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode.removeChild(<htmlElement>);
-```
-
-#### Remove Class ####
-
-From jQuery
-
-```js
-$(<htmlElement>).removeClass(<className>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.classList.remove(<className>);
-```
-
-#### Set Attribute ####
-
-From jQuery
-
-```js
-$(<htmlElement>).attr(<attributeName>, <value>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.setAttribute(<attributeName>, <value>);
-```
-
-#### Set Data ####
-
-From jQuery
-
-```js
-$(<htmlElement>).data(<dataName>, <value>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.setAttribute(<"data-" + dataName>, <value>);
 ```
 
 #### Set HTML ####
@@ -1137,20 +1157,6 @@ to Vanilla JS
 [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
     return htmlElement !== <htmlElement>;
 });
-```
-
-#### Toggle Class ####
-
-From jQuery
-
-```js
-$(<htmlElement>).toggleClass(<className>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.classList.toggle(<className>);
 ```
 
 
