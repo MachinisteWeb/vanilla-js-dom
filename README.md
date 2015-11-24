@@ -286,7 +286,7 @@ $(".classname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByClassName(".classname"); // Live
+var htmlCollection = document.getElementsByClassName("classname"); // Live
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
