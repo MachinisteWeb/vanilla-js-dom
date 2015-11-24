@@ -287,6 +287,7 @@ to Vanilla JS
 
 ```js
 var htmlCollection = document.getElementsByClassName("classname"); // Live
+// var nodeList = document.querySelectorAll(".classname"); // Not Live (Snapshot)
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
@@ -306,6 +307,7 @@ to Vanilla JS
 
 ```js
 var nodeList = document.getElementsByName("name"); // Live
+// var nodeList = document.querySelectorAll("[name=name]"); // Not Live (Snapshot)
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -325,6 +327,7 @@ to Vanilla JS
 
 ```js
 var htmlCollection = document.getElementsByTagName("tagname"); // Live
+// var nodeList = document.querySelectorAll("tagname"); // Not Live (Snapshot)
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
