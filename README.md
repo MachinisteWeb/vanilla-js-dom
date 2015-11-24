@@ -847,8 +847,8 @@ to Vanilla JS
 
 ```js
 var nextAll = false;
-nextAll = [].filter.call(&lt;htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement.previousElementSibling === &lt;htmlElement>) ? nextAll = true : nextAll;
+nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement.previousElementSibling === <htmlElement>) ? nextAll = true : nextAll;
 });
 ```
 
@@ -1003,8 +1003,8 @@ to Vanilla JS
 
 ```js
 var prevAll = true;
-prevAll = [].filter.call(&lt;htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement === &lt;htmlElement>) ? prevAll = false : prevAll;
+prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement === <htmlElement>) ? prevAll = false : prevAll;
 });
 ```
 
