@@ -82,27 +82,19 @@ The much faster method:
         - [Find Children](#find-children)
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
-        - [Get Style](#get-style)
         - [Get Text](#get-text)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
         - [Matches Selector](#matches-selector)
         - [Next](#next)
         - [NextAll](#nextall)
-        - [Offset from Document](#offset-from-document)
-        - [Offset from Parent](#offset-from-parent)
-        - [Offset from Viewport](#offset-from-viewport)
-        - [Outer Height](#outer-height)
-        - [Outer Width](#outer-width)
         - [Parent](#parent)
-        - [Parent Not Static](#parent-not-static)
         - [Prepend](#prepend)
         - [Prev](#prev)
         - [PrevAll](#prevall)
         - [Remove Node](#remove-node)
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
-        - [Set Style](#set-style)
         - [Set Text](#set-text)
         - [Siblings](#siblings)
     - [EVENTS](#events)
@@ -122,6 +114,15 @@ The much faster method:
         - [Last](#last)
         - [Not](#not)
         - [Slice](#slice)
+    - [STYLES](#styles)
+        - [Get Style](#get-style)
+        - [Offset from Document](#offset-from-document)
+        - [Offset from Parent](#offset-from-parent)
+        - [Offset from Viewport](#offset-from-viewport)
+        - [Outer Height](#outer-height)
+        - [Outer Width](#outer-width)
+        - [Parent Not Static](#parent-not-static)
+        - [Set Style](#set-style)
     - [UTILS](#utils)
         - [Array Each](#array-each)
         - [Change Futur Context](#change-futur-context)
@@ -815,20 +816,6 @@ to Vanilla JS
 <htmlElement>.outerHTML;
 ```
 
-#### Get Style ####
-
-From jQuery
-
-```js
-$(<htmlElement>).css(<property>);
-```
-
-to Vanilla JS
-
-```js
-getComputedStyle(<htmlElement>)[<property>];
-```
-
 #### Get Text ####
 
 From jQuery
@@ -917,87 +904,6 @@ nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElemen
 });
 ```
 
-#### Offset from Document ####
-
-From jQuery
-
-```js
-$(<htmlElement>).offset();
-```
-
-to Vanilla JS
-
-```js
-var rect = <htmlElement>.getBoundingClientRect()
-{
-    top: rect.top + document.body.scrollTop,
-    left: rect.left + document.body.scrollLeft
-}
-```
-
-#### Offset from Parent ####
-
-From jQuery
-
-```js
-$(<htmlElement>).position();
-```
-
-to Vanilla JS
-
-```js
-{
-    left: <htmlElement>.offsetLeft,
-    top: <htmlElement>.offsetTop
-}
-```
-
-#### Offset from Viewport ####
-
-From jQuery
-
-```js
-$(<htmlElement>).offset();
-```
-
-to Vanilla JS
-
-```js
-var rect = <htmlElement>.getBoundingClientRect()
-{
-    top: rect.top + document.body.scrollTop,
-    left: rect.left + document.body.scrollLeft
-}
-```
-
-#### Outer Height ####
-
-From jQuery
-
-```js
-$(<htmlElement>).outerHeight();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.offsetHeight
-```
-
-#### Outer Width ####
-
-From jQuery
-
-```js
-$(<htmlElement>).outerWidth();
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.offsetWidth
-```
-
 #### Parent ####
 
 From jQuery
@@ -1010,20 +916,6 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode;
-```
-
-#### Parent Not Static ####
-
-From jQuery
-
-```js
-$(<htmlElement>).offsetParent();
-```
-
-to Vanilla JS
-
-```js
-(<htmlElement>.offsetParent || <htmlElement>)
 ```
 
 #### Prepend ####
@@ -1113,20 +1005,6 @@ to Vanilla JS
 
 ```js
 <htmlElement>.outerHTML = <htmlString>;
-```
-
-#### Set Style ####
-
-From jQuery
-
-```js
-$(<htmlElement>).css(<property>, <value>);
-```
-
-to Vanilla JS
-
-```js
-<htmlElement>.style.<property> = <value>;
 ```
 
 #### Set Text ####
@@ -1427,6 +1305,133 @@ to Vanilla JS
 ```js
 var nodeList = document.querySelectorAll(&lt;selector>);
 [].slice.call(nodeList, <startIndex>, <endIndex>);
+```
+
+
+
+### STYLES ###
+
+#### Get Style ####
+
+From jQuery
+
+```js
+$(<htmlElement>).css(<property>);
+```
+
+to Vanilla JS
+
+```js
+getComputedStyle(<htmlElement>)[<property>];
+```
+
+#### Offset from Document ####
+
+From jQuery
+
+```js
+$(<htmlElement>).offset();
+```
+
+to Vanilla JS
+
+```js
+var rect = <htmlElement>.getBoundingClientRect()
+{
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft
+}
+```
+
+#### Offset from Parent ####
+
+From jQuery
+
+```js
+$(<htmlElement>).position();
+```
+
+to Vanilla JS
+
+```js
+{
+    left: <htmlElement>.offsetLeft,
+    top: <htmlElement>.offsetTop
+}
+```
+
+#### Offset from Viewport ####
+
+From jQuery
+
+```js
+$(<htmlElement>).offset();
+```
+
+to Vanilla JS
+
+```js
+var rect = <htmlElement>.getBoundingClientRect()
+{
+    top: rect.top + document.body.scrollTop,
+    left: rect.left + document.body.scrollLeft
+}
+```
+
+#### Outer Height ####
+
+From jQuery
+
+```js
+$(<htmlElement>).outerHeight();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.offsetHeight
+```
+
+#### Outer Width ####
+
+From jQuery
+
+```js
+$(<htmlElement>).outerWidth();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.offsetWidth
+```
+
+#### Parent Not Static ####
+
+From jQuery
+
+```js
+$(<htmlElement>).offsetParent();
+```
+
+to Vanilla JS
+
+```js
+(<htmlElement>.offsetParent || <htmlElement>)
+```
+
+#### Set Style ####
+
+From jQuery
+
+```js
+$(<htmlElement>).css(<property>, <value>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.style.<property> = <value>;
 ```
 
 
