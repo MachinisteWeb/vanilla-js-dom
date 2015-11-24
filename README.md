@@ -89,7 +89,7 @@ The much faster method:
         - [Last](#last)
         - [Not](#not)
         - [Slice](#slice)
-    - [MANIPULATION]
+    - [MANIPULATION](#manipulation)
         - [Append](#append)
         - [Clone](#clone)
         - [Compare](#compare)
@@ -105,7 +105,7 @@ The much faster method:
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Text](#set-text)
-    - [TRAVERSING]
+    - [TRAVERSING](#traversing)
         - [Children](#children)
         - [Find Children](#find-children)
         - [Matches Selector](#matches-selector)
