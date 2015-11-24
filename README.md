@@ -83,6 +83,7 @@ The much faster method:
         - [Insert Before](#insert-before)
         - [Matches Selector](#matches-selector)
         - [Next](#next)
+        - [NextAll](#nextall)
         - [Offset from Document](#offset-from-document)
         - [Offset from Parent](#offset-from-parent)
         - [Offset from Viewport](#offset-from-viewport)
@@ -92,6 +93,7 @@ The much faster method:
         - [Parent Not Static](#parent-not-static)
         - [Prepend](#prepend)
         - [Prev](#prev)
+        - [PrevAll](#prevall)
         - [Remove Class](#remove-class)
         - [Remove Class](#remove-class)
         - [Set Attribute](#set-attribute)
@@ -829,7 +831,25 @@ $(<htmlElement>).next();
 to Vanilla JS
 
 ```js
-<htmlElement>.nextElementSibling;
+<htmlElement>.nextElementSibling; // HTMLCollection
+// &lt;htmlElement>.nextSibling; // NodeList
+```
+
+#### NextAll ####
+
+From jQuery
+
+```js
+$(<htmlElement>).nextAll();
+```
+
+to Vanilla JS
+
+```js
+var nextAll = false;
+nextAll = [].filter.call(&lt;htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement.previousElementSibling === &lt;htmlElement>) ? nextAll = true : nextAll;
+});
 ```
 
 #### Offset from Document ####
@@ -967,7 +987,25 @@ $(<htmlElement>).prev();
 to Vanilla JS
 
 ```js
-<htmlElement>.previousElementSibling;
+<htmlElement>.previousElementSibling; // HTMLCollection
+// &lt;htmlElement>.previousSibling // NodeList;
+```
+
+#### PrevAll ####
+
+From jQuery
+
+```js
+$(<htmlElement>).prevAll();
+```
+
+to Vanilla JS
+
+```js
+var prevAll = true;
+prevAll = [].filter.call(&lt;htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement === &lt;htmlElement>) ? prevAll = false : prevAll;
+});
 ```
 
 #### Remove Class ####
