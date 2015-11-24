@@ -107,11 +107,13 @@ The much faster method:
         - [Set Text](#set-text)
     - [TRAVERSING](#traversing)
         - [Children](#children)
+        - [Closest Parent](#closest-parent)
         - [Find Children](#find-children)
         - [Matches Selector](#matches-selector)
         - [Next](#next)
         - [NextAll](#nextall)
         - [Parent](#parent)
+        - [Parents](#parents)
         - [Prev](#prev)
         - [PrevAll](#prevall)
         - [Siblings](#siblings)
@@ -1190,6 +1192,20 @@ to Vanilla JS
 <htmlElement>.children;
 ```
 
+#### Closest Parent ####
+
+From jQuery
+
+```js
+$(<htmlElement>).closest(<parentSelector>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.closest(<parentSelector>);
+```
+
 #### Find Children ####
 
 From jQuery
@@ -1262,6 +1278,26 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode;
+```
+
+#### Parents ####
+
+From jQuery
+
+```js
+var parents = $(<htmlElement>).parents(<parentSelector>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.parentNode;
+var htmlElement = <htmlElement>,
+    parents = [];
+while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
+    parents.push(htmlElement);
+}
+parents;
 ```
 
 #### Prev ####
