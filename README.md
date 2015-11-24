@@ -620,7 +620,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-var $a = $(<firstHtmlElement>).find(<selectorToSecondHtmlElement>);
+var $a = $(<selectorToFirstHtmlElement>).find(<selectorToSecondHtmlElement>);
     $b = $(<selectorToSecondHtmlElement>);
 
 $a.is($b);
@@ -1246,6 +1246,8 @@ event.test = true;
 #### Filter ####
 
 From jQuery
+
+filterCondition
 
 ```js
 $(<selector>).filter(function (i, htmlElement) {
