@@ -106,6 +106,7 @@ The much faster method:
         - [Set Node HTML](#set-node-html)
         - [Set Text](#set-text)
     - [TRAVERSING](#traversing)
+        - [All Parents](#all-parents)
         - [Children](#children)
         - [Closest Parent](#closest-parent)
         - [Find Children](#find-children)
@@ -1177,6 +1178,25 @@ to Vanilla JS
 
 
 ### TRAVERSING ###
+
+#### All Parents ####
+
+From jQuery
+
+```js
+var parents = $(<htmlElement>).parents();
+```
+
+to Vanilla JS
+
+```js
+var htmlElement = <htmlElement>,
+    parents = [];
+while (htmlElement = htmlElement.parentNode) {
+    parents.push(htmlElement);
+}
+parents;
+```
 
 #### Children ####
 
