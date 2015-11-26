@@ -107,6 +107,7 @@ The much faster method:
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Text](#set-text)
+        - [Wrap](#wrap)
     - [TRAVERSING](#traversing)
         - [All Parents](#all-parents)
         - [Children](#children)
@@ -946,13 +947,13 @@ var nodeList = document.querySelectorAll(<selector>);
 From jQuery
 
 ```js
-$(&lt;selector>).slice(<startIndex>, <endIndex>);
+$(<selector>).slice(<startIndex>, <endIndex>);
 ```
 
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll(&lt;selector>);
+var nodeList = document.querySelectorAll(<selector>);
 [].slice.call(nodeList, <startIndex>, <endIndex>);
 ```
 
@@ -1162,7 +1163,7 @@ $(<htmlElement>).replaceWith($(<newHtmlElement>));
 to Vanilla JS
 
 ```js
-<htmlElement>.parentNode.replaceChild(<newHtmlElement>, &lt;htmlElement>);
+<htmlElement>.parentNode.replaceChild(<newHtmlElement>, <htmlElement>);
 ```
 
 #### Set HTML ####
@@ -1205,6 +1206,21 @@ to Vanilla JS
 
 ```js
 <htmlElement>.textContent = <string>;
+```
+
+#### Wrap ####
+
+From jQuery
+
+```js
+$(<htmlElement>).wrap($(<wrapHtmlElement>));
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.parentNode.insertBefore(<wrapHtmlElement>, <htmlElement>);
+<wrapHtmlElement>.appendChild(<htmlElement>);
 ```
 
 
@@ -1326,7 +1342,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.nextElementSibling; // HTMLCollection
-// &lt;htmlElement>.nextSibling; // NodeList
+// <htmlElement>.nextSibling; // NodeList
 ```
 
 #### NextAll ####
@@ -1391,7 +1407,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.previousElementSibling; // HTMLCollection
-// &lt;htmlElement>.previousSibling // NodeList;
+// <htmlElement>.previousSibling // NodeList;
 ```
 
 #### PrevAll ####
@@ -1731,7 +1747,7 @@ function parseXML(htmlString) {
     return (new DOMParser()).parseFromString(htmlString,"text/xml");
 }
 
-parseXML(&lt;htmlString>);
+parseXML(<htmlString>);
 ```
 
 #### Trim ####
