@@ -94,6 +94,7 @@ The much faster method:
         - [Clone](#clone)
         - [Compare](#compare)
         - [Contains](#contains)
+        - [Create Node](#create-node)
         - [Empty](#empty)
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
@@ -1018,6 +1019,20 @@ to Vanilla JS
 
 ```js
 (<htmlElement> !== <childHtmlElement>) && <htmlElement>.contains(<childHtmlElement>);
+```
+
+#### Create Node ####
+
+From jQuery
+
+```js
+$(<<tagString>>);
+```
+
+to Vanilla JS
+
+```js
+document.createElement(&lt;tagString>);
 ```
 
 #### Empty ####
