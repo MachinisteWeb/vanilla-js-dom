@@ -1032,7 +1032,7 @@ $(<<tagString>>);
 to Vanilla JS
 
 ```js
-document.createElement(&lt;tagString>);
+document.createElement(<tagString>);
 ```
 
 #### Empty ####
