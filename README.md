@@ -54,6 +54,7 @@ The much faster method:
         - [[.classname]](#classname)
         - [[name]](#name)
         - [[tagname]](#tagname)
+        - [Inverted Loop](#inverted-loop)
     - [AJAX](#ajax)
         - [GET](#get)
         - [JSON](#json)
@@ -344,6 +345,26 @@ var htmlCollection = document.getElementsByTagName("tagname"); // Live
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
+```
+
+#### Reverted Loop ####
+
+From jQuery
+
+```js
+$($(".className").get().reverse()).each(function (i, htmlElement) {
+    htmlElement;
+});
+```
+
+to Vanilla JS
+
+```js
+var htmlCollection = document.getElementsByClassName("className"), // Live
+    i = htmlCollection.length;
+while (htmlElement = htmlCollection[--i]) {
+    htmlElement;
+}
 ```
 
 
