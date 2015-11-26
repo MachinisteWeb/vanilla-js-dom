@@ -107,6 +107,7 @@ The much faster method:
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Text](#set-text)
+        - [Unwrap](#unwrap)
         - [Wrap](#wrap)
     - [TRAVERSING](#traversing)
         - [All Parents](#all-parents)
@@ -1206,6 +1207,23 @@ to Vanilla JS
 
 ```js
 <htmlElement>.textContent = <string>;
+```
+
+#### Unwrap ####
+
+From jQuery
+
+```js
+$(<htmlElement>).unwrap();
+```
+
+to Vanilla JS
+
+```js
+while (<htmlElement>.firstChild) {
+    <unwrapHtmlElement>.insertBefore(<htmlElement>.firstChild, <htmlElement>);
+}
+<unwrapHtmlElement>.removeChild(<htmlElement>);
 ```
 
 #### Wrap ####
