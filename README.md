@@ -967,13 +967,14 @@ var nodeList = document.querySelectorAll(<selector>);
 From jQuery
 
 ```js
-$(<htmlElement>).append(<movedHtmlElement>);
+$(<htmlElement>).append($(<appendHtmlElement>));
+// $(<htmlElement>).append(<appendHtmlElement>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.appendChild(<movedHtmlElement>);
+<htmlElement>.appendChild(<appendHtmlElement>);
 // <htmlElement>.insertAdjacentHTML("beforeEnd", "<htmlString>");
 ```
 
@@ -1017,7 +1018,7 @@ var temp = document.getElementsByTagName(<selectorToFirstHtmlElement>)[0],
 From jQuery
 
 ```js
-$.contains(<htmlElement>, <childHtmlElement>);
+$.contains($(<htmlElement>), $(<childHtmlElement>));
 ```
 
 to Vanilla JS
@@ -1101,13 +1102,15 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).after(<htmlString>);
+$(<htmlElement>).after($(<afterHtmlElement>));
+// $(<htmlElement>).after(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.insertAdjacentHTML("afterend", <htmlString>);
+<htmlElement>.parentNode.insertBefore(<afterHtmlElement>, <htmlElement>.nextSibling);
+// <htmlElement>.insertAdjacentHTML("afterend", <htmlString>);
 ```
 
 #### Insert Before ####
@@ -1115,13 +1118,15 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).before(<htmlString>);
+$(<htmlElement>).before($(<beforeHtmlElement>));
+// $(<htmlElement>).before(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.insertAdjacentHTML("beforebegin", <htmlString>);
+<htmlElement>.parentNode.insertBefore(<beforeHtmlElement>, <htmlElement>);
+// <htmlElement>.insertAdjacentHTML("beforebegin", <htmlString>);
 ```
 
 #### Prepend ####
@@ -1129,13 +1134,14 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).prepend(<movedHtmlElement>);
+$(<htmlElement>).prepend($(<prependHtmlElement>));
+// $(<htmlElement>).prepend(<htmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-<htmlElement>.insertBefore(<movedHtmlElement>, <htmlElement>.firstChild);
+<htmlElement>.insertBefore(<prependHtmlElement>, <htmlElement>.firstChild);
 // <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
 ```
 
