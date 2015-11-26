@@ -111,6 +111,8 @@ The much faster method:
         - [Children](#children)
         - [Closest Parent](#closest-parent)
         - [Find Children](#find-children)
+        - [First Child](#first-child)
+        - [Last Child](#last-child)
         - [Matches Selector](#matches-selector)
         - [Next](#next)
         - [NextAll](#nextall)
@@ -1253,6 +1255,34 @@ to Vanilla JS
 
 ```js
 <htmlElement>.querySelectorAll(<childrenSelector>);
+```
+
+#### First Child ####
+
+From jQuery
+
+```js
+$(<htmlElement>).children().first();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.firstChild();
+```
+
+#### Last Child ####
+
+From jQuery
+
+```js
+$(<htmlElement>).children().last();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.lastChild();
 ```
 
 #### Matches Selector ####
