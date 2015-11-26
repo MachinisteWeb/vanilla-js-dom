@@ -94,7 +94,7 @@ The much faster method:
         - [Clone](#clone)
         - [Compare](#compare)
         - [Contains](#contains)
-        - [Create Node](#create-node)
+        - [Create](#create)
         - [Empty](#empty)
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
@@ -102,7 +102,8 @@ The much faster method:
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
         - [Prepend](#prepend)
-        - [Remove Node](#remove-node)
+        - [Remove](#remove)
+        - [Replace](#replace)
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
         - [Set Text](#set-text)
@@ -1023,7 +1024,7 @@ to Vanilla JS
 (<htmlElement> !== <childHtmlElement>) && <htmlElement>.contains(<childHtmlElement>);
 ```
 
-#### Create Node ####
+#### Create ####
 
 From jQuery
 
@@ -1136,7 +1137,7 @@ to Vanilla JS
 // <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
 ```
 
-#### Remove Node ####
+#### Remove ####
 
 From jQuery
 
@@ -1148,6 +1149,20 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode.removeChild(<htmlElement>);
+```
+
+#### Replace ####
+
+From jQuery
+
+```js
+$(<htmlElement>).replaceWith($(<newHtmlElement>));
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.parentNode.replaceChild(<newHtmlElement>, &lt;htmlElement>);
 ```
 
 #### Set HTML ####
