@@ -1432,10 +1432,13 @@ var parents = $(<htmlElement>).parents(<parentSelector>);
 to Vanilla JS
 
 ```js
-var htmlElement = <htmlElement>,
+var htmlElement = &lt;htmlElement>,
     parents = [];
-while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
-    parents.push(htmlElement);
+while (htmlElement = htmlElement.parentNode) {
+    (htmlElement.matches && htmlElement.matches(&lt;parentSelector>)) ? parents.push(htmlElement) : "";
+/* // More fast alternative but not supported by IE/Edge
+while (htmlElement = htmlElement.parentNode.closest(&lt;parentSelector>)) {
+    parents.push(htmlElement); */
 }
 parents;
 ```
