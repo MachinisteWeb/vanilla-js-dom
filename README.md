@@ -65,6 +65,7 @@ The much faster method:
         - [Get Attribute](#get-attribute)
         - [Get Data](#get-data)
         - [Has Class](#has-class)
+        - [Remove Attribute](#remove-attribute)
         - [Remove Class](#remove-class)
         - [Set Attribute](#set-attribute)
         - [Set Data](#set-data)
@@ -580,6 +581,20 @@ to Vanilla JS
 
 ```js
 <htmlElement>.classList.contains(<className>);
+```
+
+#### Remove Attribute ####
+
+From jQuery
+
+```js
+$(<htmlElement>).removeAttr(<attributeName>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.removeAttribute(<attributeName>);
 ```
 
 #### Remove Class ####
