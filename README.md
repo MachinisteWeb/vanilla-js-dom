@@ -129,6 +129,8 @@ The much faster method:
         - [Siblings](#siblings)
     - [STYLES](#styles)
         - [Get Style](#get-style)
+        - [Get Scroll Left](#get-scroll-left)
+        - [Get Scroll Top](#get-scroll-top)
         - [Offset from Document](#offset-from-document)
         - [Offset from Parent](#offset-from-parent)
         - [Offset from Viewport](#offset-from-viewport)
@@ -136,6 +138,8 @@ The much faster method:
         - [Outer Width](#outer-width)
         - [Parent Not Static](#parent-not-static)
         - [Set Style](#set-style)
+        - [Set Scroll Left](#set-scroll-left)
+        - [Set Scroll Top](#set-scroll-top)
     - [UTILS](#utils)
         - [Array Each](#array-each)
         - [Change Futur Context](#change-futur-context)
@@ -1545,6 +1549,34 @@ to Vanilla JS
 getComputedStyle(<htmlElement>)[<property>];
 ```
 
+#### Get Scroll Left ####
+
+From jQuery
+
+```js
+$(<htmlElement>).scrollLeft();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.scrollLeft;
+```
+
+#### Get Scroll Top ####
+
+From jQuery
+
+```js
+$(<htmlElement>).scrollTop();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.scrollTop;
+```
+
 #### Offset from Document ####
 
 From jQuery
@@ -1652,6 +1684,34 @@ to Vanilla JS
 
 ```js
 <htmlElement>.style.<property> = <value>;
+```
+
+#### Set Scroll Left ####
+
+From jQuery
+
+```js
+$(<htmlElement>).scrollLeft(<distance>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.scrollLeft = <distance>;
+```
+
+#### Set Scroll Top ####
+
+From jQuery
+
+```js
+$(<htmlElement>).scrollTop(<distance>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.scrollTop = <distance>;
 ```
 
 
