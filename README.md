@@ -1316,7 +1316,13 @@ $(<htmlElement>).closest(<parentSelector>);
 to Vanilla JS
 
 ```js
-<htmlElement>.closest(<parentSelector>);
+var htmlElement = <htmlElement>,
+    parents = [];
+while (htmlElement = htmlElement.parentNode) {
+    (htmlElement.matches && htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : "";
+}
+parents[0];
+// <htmlElement>.closest(<parentSelector>); // More fast but not supported by IE/EDGE
 ```
 
 #### Find Children ####
