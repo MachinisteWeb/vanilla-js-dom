@@ -1785,16 +1785,16 @@ to Vanilla JS
 From jQuery
 
 ```js
-&lt;object> = $.extend(&lt;extendingObject>, &lt;object>);
+<object> = $.extend(<extendingObject>, <object>);
 ```
 
 to Vanilla JS
 
 ```js
-Object.keys(&lt;object>).forEach(function (key) {
-    &lt;object>[key] = (&lt;extendingObject>[key]) ? &lt;extendingObject>[key] : &lt;object>[key];
+Object.keys(<object>).forEach(function (key) {
+    <object>[key] = (<extendingObject>[key]) ? <extendingObject>[key] : <object>[key];
 });
-&lt;object>;
+<object>;
 ```
 
 #### Index Of ####
