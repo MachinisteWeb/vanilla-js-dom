@@ -64,12 +64,14 @@ The much faster method:
         - [Add Class](#add-class)
         - [Get Attribute](#get-attribute)
         - [Get Data](#get-data)
+        - [Get Value](#get-data)
         - [Has Class](#has-class)
         - [Remove Attribute](#remove-attribute)
         - [Remove Class](#remove-class)
         - [Remove Data](#remove-data)
         - [Set Attribute](#set-attribute)
         - [Set Data](#set-data)
+        - [Set Value](#set-data)
         - [Toggle Class](#toggle-class)
     - [EFFECTS](#effects)
         - [Animation](#animation)
@@ -576,6 +578,20 @@ to Vanilla JS
 <htmlElement>.getAttribute(<"data-" + dataName>);
 ```
 
+#### Get Value ####
+
+From jQuery
+
+```js
+$(<htmlElement>).value();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.value;
+```
+
 #### Has Class ####
 
 From jQuery
@@ -658,6 +674,20 @@ to Vanilla JS
 
 ```js
 <htmlElement>.setAttribute(<"data-" + dataName>, <value>);
+```
+
+#### Set Value ####
+
+From jQuery
+
+```js
+$(<htmlElement>).value(<value>);
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.value = <value>;
 ```
 
 #### Toggle Class ####
