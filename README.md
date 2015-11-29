@@ -131,6 +131,8 @@ The much faster method:
         - [Get Style](#get-style)
         - [Get Scroll Left](#get-scroll-left)
         - [Get Scroll Top](#get-scroll-top)
+        - [Inner Height](#inner-height)
+        - [Inner Width](#inner-width)
         - [Offset from Document](#offset-from-document)
         - [Offset from Parent](#offset-from-parent)
         - [Offset from Viewport](#offset-from-viewport)
@@ -1575,6 +1577,34 @@ to Vanilla JS
 
 ```js
 <htmlElement>.scrollTop;
+```
+
+#### Inner Height ####
+
+From jQuery
+
+```js
+$(<htmlElement>).innerHeight();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.clientHeight
+```
+
+#### Inner Width ####
+
+From jQuery
+
+```js
+$(<htmlElement>).innerWidth();
+```
+
+to Vanilla JS
+
+```js
+<htmlElement>.clientWidth
 ```
 
 #### Offset from Document ####
