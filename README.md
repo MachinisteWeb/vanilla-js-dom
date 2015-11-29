@@ -1785,31 +1785,16 @@ to Vanilla JS
 From jQuery
 
 ```js
-$.isArray(<array>);
+&lt;object> = $.extend(&lt;extendingObject>, &lt;object>);
 ```
 
 to Vanilla JS
 
 ```js
-function extend(first) {
-    var extended = first || {};
-
-    for (var i = 1; i < arguments.length; i++) {
-        if (!arguments[i]) {
-            continue;
-        }
-
-        for (var key in arguments[i]) {
-            if (arguments[i].hasOwnProperty(key)) {
-                extended[key] = arguments[i][key];
-            }
-        }
-    }
-
-    return extended;
-}
-
-var object = extend(<object1>, <object2> ..., <objectN>)
+Object.keys(&lt;object>).forEach(function (key) {
+    &lt;object>[key] = (&lt;extendingObject>[key]) ? &lt;extendingObject>[key] : &lt;object>[key];
+});
+&lt;object>;
 ```
 
 #### Index Of ####
