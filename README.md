@@ -115,7 +115,9 @@ The much faster method:
         - [Unwrap](#unwrap)
         - [Wrap](#wrap)
     - [TRAVERSING](#traversing)
+        - [All Next](#all-next)
         - [All Parents](#all-parents)
+        - [All Previous](#all-previous)
         - [Children](#children)
         - [Closest Parent](#closest-parent)
         - [Find Children](#find-children)
@@ -123,11 +125,11 @@ The much faster method:
         - [Last Child](#last-child)
         - [Matches Selector](#matches-selector)
         - [Next](#next)
-        - [NextAll](#nextall)
+        - [Next Until](#next-until)
         - [Parent](#parent)
         - [Parents](#parents)
         - [Prev](#prev)
-        - [PrevAll](#prevall)
+        - [Previous Until](#previous-until)
         - [Siblings](#siblings)
     - [STYLES](#styles)
         - [Get Style](#get-style)
@@ -1340,6 +1342,23 @@ to Vanilla JS
 
 ### TRAVERSING ###
 
+#### All Next ####
+
+From jQuery
+
+```js
+$(<htmlElement>).nextAll();
+```
+
+to Vanilla JS
+
+```js
+var nextAll = false;
+nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement.previousElementSibling === <htmlElement>) ? nextAll = true : nextAll;
+});
+```
+
 #### All Parents ####
 
 From jQuery
@@ -1357,6 +1376,23 @@ while (htmlElement = htmlElement.parentNode) {
     parents.push(htmlElement);
 }
 parents;
+```
+
+#### All Previous ####
+
+From jQuery
+
+```js
+$(<htmlElement>).prevAll();
+```
+
+to Vanilla JS
+
+```js
+var prevAll = true;
+prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
+    return (htmlElement === <htmlElement>) ? prevAll = false : prevAll;
+});
 ```
 
 #### Children ####
@@ -1464,21 +1500,24 @@ to Vanilla JS
 // <htmlElement>.nextSibling; // NodeList
 ```
 
-#### NextAll ####
+#### Next Until ####
 
 From jQuery
 
 ```js
-$(<htmlElement>).nextAll();
+$(<htmlElement>).nextUntil(<nextSelector>);
 ```
 
 to Vanilla JS
 
 ```js
-var nextAll = false;
-nextAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement.previousElementSibling === <htmlElement>) ? nextAll = true : nextAll;
-});
+var htmlElement = <htmlElement>,
+    nextUntil = [],
+    until = true;
+while (htmlElement = htmlElement.nextElementSibling) {
+    (until && htmlElement && !htmlElement.matches(<nextSelector>)) ? nextUntil.push(htmlElement) : until = false;
+}
+nextUntil;
 ```
 
 #### Parent ####
@@ -1555,21 +1594,24 @@ to Vanilla JS
 // <htmlElement>.previousSibling // NodeList;
 ```
 
-#### PrevAll ####
+#### Previous Until ####
 
 From jQuery
 
 ```js
-$(<htmlElement>).prevAll();
+$(<htmlElement>).prevUntil(<previousSelector>);
 ```
 
 to Vanilla JS
 
 ```js
-var prevAll = true;
-prevAll = [].filter.call(<htmlElement>.parentNode.children, function (htmlElement) {
-    return (htmlElement === <htmlElement>) ? prevAll = false : prevAll;
-});
+var htmlElement = <htmlElement>,
+    previousUntil = [],
+    until = true;
+while (htmlElement = htmlElement.previousElementSibling) {
+    (until && htmlElement && !htmlElement.matches(<previousSelector>)) ? previousUntil.push(htmlElement) : until = false;
+}
+previousUntil;
 ```
 
 #### Siblings ####
