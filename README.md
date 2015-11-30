@@ -2014,8 +2014,6 @@ function serialize(form) {
 serialize(<form>);
 ```
 
-
-
 #### Trim ####
 
 From jQuery
