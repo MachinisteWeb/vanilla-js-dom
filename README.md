@@ -1939,6 +1939,83 @@ function parseXML(htmlString) {
 parseXML(<htmlString>);
 ```
 
+#### Serialize Array ####
+
+From jQuery
+
+```js
+$.serializeArray(<form>);
+```
+
+to Vanilla JS
+
+```js
+function serializeArray(form) {
+    var field, length, output = [];
+
+    if (typeof form === "object" && form.nodeName === "FORM") {
+        var length = form.elements.length;
+        for (i = 0; i < length; i++) {
+            field = form.elements[i];
+            if (field.name && !field.disabled && field.type !== "file" && field.type != "reset" && field.type != "submit" && field.type != "button") {
+                if (field.type === "select-multiple") {
+                    length = form.elements[i].options.length;
+                    for (j = 0; j < length; j++) {
+                        if(field.options[j].selected)
+                            output[output.length] = { name: field.name, value: field.options[j].value };
+                    }
+                } else if ((field.type !== "checkbox" && field.type !== "radio") || field.checked) {
+                    output[output.length] = { name: field.name, value: field.value };
+                }
+            }
+        }
+    }
+
+    return output;
+}
+serializeArray(<form>);
+```
+
+#### Serialize String ####
+
+From jQuery
+
+```js
+$.serialize(<form>);
+```
+
+to Vanilla JS
+
+```js
+function serialize(form) {
+    var field, length, output = [];
+
+    if (typeof form === "object" && form.nodeName === "FORM") {
+        var length = form.elements.length;
+        for (var i = 0; i < length; i++) {
+            field = form.elements[i];
+            if (field.name && !field.disabled && field.type !== "file" && field.type !== "reset" && field.type !== "submit" && field.type !== 'button') {
+                if (field.type === "select-multiple") {
+                    length = form.elements[i].options.length;
+                    for (var j=0; j < length; j++) {
+                        if (field.options[j].selected) {
+                            output[output.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[j].value);
+                        }
+                    }
+                } else if ((field.type !== "checkbox" && field.type !== "radio") || field.checked) {
+                    output[output.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
+                }
+            }
+        }
+    }
+
+    return output.join("&").replace(/%20/g, "+");
+}
+serialize(<form>);
+```
+
+
+
 #### Trim ####
 
 From jQuery
