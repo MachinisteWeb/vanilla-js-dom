@@ -236,7 +236,7 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 
 ## From jQuery to Vanilla JS ##
 
-**Legende**
+**Legend**
 
 Understand each type of DOM Object:
 
