@@ -155,6 +155,8 @@ The much faster method:
         - [Parse HTML](#parse-html)
         - [Parse JSON](#parse-json)
         - [Parse XML](#parse-xml)
+        - [Serialize Array](#serialize-array)
+        - [Serialize String](#serialize-string)
         - [Trim](#trim)
 
 
