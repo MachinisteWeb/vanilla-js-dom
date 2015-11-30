@@ -167,10 +167,12 @@ The much faster method:
 
 ## Speed Comparison ##
 
+When Vanilla JS perform 100 operations, others do:
+
 ### Retrieve DOM element by ID ###
 
 |              | Code                                                                         | 100 ops Vanilla JS |
-|--------------|------------------------------------------------------------------------------|-------------------:|
+|--------------|:-----------------------------------------------------------------------------|-------------------:|
 | Vanilla JS   | [document.getElementById("vanilla");](http://codepen.io/Haeresis/pen/RWeqaB) |                100 |
 | Dojo         | [dojo.byId("dojo");](http://codepen.io/Haeresis/pen/yYQjxp)                  |                 92 |
 | Prototype JS | [$("prototype");](http://codepen.io/Haeresis/pen/yYQjEP)                     |                 57 |
@@ -182,7 +184,7 @@ The much faster method:
 ### Retrieve 10 DOM elements by tag name ###
 
 |              | Code                                                                                  | 100 ops Vanilla JS |
-|--------------|---------------------------------------------------------------------------------------|-------------------:|
+|--------------|:--------------------------------------------------------------------------------------|-------------------:|
 | Vanilla JS   | [document.getElementsByTagName("div");](http://codepen.io/Haeresis/pen/BoGVzd)        |                100 |
 | Prototype JS | [Prototype.Selector.select("div", document);](http://codepen.io/Haeresis/pen/LpXrOG)  |                 25 |
 | jQuery       | [$("div");](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
@@ -196,21 +198,21 @@ The much faster method:
 #### Retrieve 10 DOM elements by class name ####
 
 |            | Code                                                                                 | 100 ops Vanilla JS |
-|------------|--------------------------------------------------------------------------------------|-------------------:|
+|------------|:-------------------------------------------------------------------------------------|-------------------:|
 | Vanilla JS | [document.getElementsByClassName("vanilla");](http://codepen.io/Haeresis/pen/ZbmRMN) |                100 |
 | jQuery     | [$(".jquery");](http://codepen.io/Haeresis/pen/jbQKeQ)                               |                 25 |
 
 #### Retrieve DOM element with `<#id> .inner span` selector ####
 
 |            | Code                                                                                     | 100 ops Vanilla JS |
-|------------|------------------------------------------------------------------------------------------|-------------------:|
+|------------|:-----------------------------------------------------------------------------------------|-------------------:|
 | Vanilla JS | [document.querySelector("#vanilla .inner span");](http://codepen.io/Haeresis/pen/PPxaVQ) |                100 |
 | jQuery     | [$("#jquery .inner span");](http://codepen.io/Haeresis/pen/YyRvgQ)                       |                 17 |
 
 #### Retrieve 10 DOM elements with `<.className> .inner span` selector ####
 
 |            | Code                                                                                        | 100 ops Vanilla JS |
-|------------|---------------------------------------------------------------------------------------------|-------------------:|
+|------------|:--------------------------------------------------------------------------------------------|-------------------:|
 | Vanilla JS | [document.querySelectorAll(".vanilla .inner span");](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
 | jQuery     | [$(".jquery .inner span");](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
 
@@ -220,8 +222,8 @@ The much faster method:
 
 All tests are based on `<section id="vanilla" class="vanilla"><article class="inner"><div class="target" id="target"></div></article></section>` HTML.
 
-| Selectionner le noeud `<div class="target" id="target"></div>`                             | 100 ops Vanilla JS |
-|--------------------------------------------------------------------------------------------|-------------------:|
+| Select node `<div class="target" id="target"></div>`                                       | 100 ops Vanilla JS |
+|:-------------------------------------------------------------------------------------------|-------------------:|
 | [document.getElementsByTagName("div");](http://codepen.io/Haeresis/pen/PPxdWo)             |                100 |
 | [document.getElementById("target");](http://codepen.io/Haeresis/pen/xwQaEz)                |                 99 |
 | [document.getElementsByClassName("target");](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
