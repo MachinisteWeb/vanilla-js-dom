@@ -242,10 +242,10 @@ Understand each type of DOM Object:
 
 ```html
 <div class="example">
-  <span>Html Element</span>
+  <span>(Text into) Html Element</span>
   <!-- Comment Element -->
   Text Element
-  <span>Html Element</span>
+  <span>(Text into) Html Element</span>
 </div>
 ```
 
