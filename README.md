@@ -104,7 +104,7 @@ The much faster method:
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
         - [Get Text](#get-text)
-        - [Index From Parent](#indix-from-parent)
+        - [Index From Parent](#index-from-parent)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
         - [Prepend](#prepend)
