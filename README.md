@@ -104,6 +104,7 @@ The much faster method:
         - [Get HTML](#get-html)
         - [Get Node HTML](#get-node-html)
         - [Get Text](#get-text)
+        - [Index From Parent](#indix-from-parent)
         - [Insert After](#insert-after)
         - [Insert Before](#insert-before)
         - [Prepend](#prepend)
@@ -1188,6 +1189,20 @@ to Vanilla JS
 
 ```js
 <htmlElement>.textContent;
+```
+
+#### Index From Parent ####
+
+From jQuery
+
+```js
+$(<htmlElement>).index();
+```
+
+to Vanilla JS
+
+```js
+[].slice.call(<htmlElement>.parentNode.children).indexOf(<htmlElement>);
 ```
 
 #### Insert After ####
