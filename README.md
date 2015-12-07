@@ -1032,7 +1032,7 @@ to Vanilla JS
 
 ```js
 var nodeList = document.querySelectorAll(<selector>);
-[].forEach.call(nodeList, function (node) {
+[].filter.call(nodeList, function (node) {
     return !node.matches(<matchesSelector>);
 });
 ```
