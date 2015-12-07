@@ -129,7 +129,7 @@ The much faster method:
         - [Next Until](#next-until)
         - [Parent](#parent)
         - [Parents](#parents)
-        - [Prev](#prev)
+        - [Previous](#previous)
         - [Previous Until](#previous-until)
         - [Siblings](#siblings)
     - [STYLES](#styles)
@@ -1513,8 +1513,8 @@ $(<htmlElement>).next();
 to Vanilla JS
 
 ```js
-<htmlElement>.nextElementSibling; // HTMLCollection
-// <htmlElement>.nextSibling; // NodeList
+<htmlElement>.nextElementSibling; // HTMLElement
+// <htmlElement>.nextSibling; // Node
 ```
 
 #### Next Until ####
@@ -1596,7 +1596,7 @@ while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
 parentsUntil;
 ```
 
-#### Prev ####
+#### Previous ####
 
 From jQuery
 
@@ -1607,8 +1607,8 @@ $(<htmlElement>).prev();
 to Vanilla JS
 
 ```js
-<htmlElement>.previousElementSibling; // HTMLCollection
-// <htmlElement>.previousSibling // NodeList;
+<htmlElement>.previousElementSibling; // HTMLElement
+// <htmlElement>.previousSibling // Node;
 ```
 
 #### Previous Until ####
