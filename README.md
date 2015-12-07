@@ -1868,7 +1868,7 @@ From jQuery
 
 ```js
 $.each(<array>, function (i, item) {
-    (item === array[i]); // true
+    (item === <array>[i]); // true
 });
 ```
 
@@ -1876,7 +1876,7 @@ to Vanilla JS
 
 ```js
 <array>.forEach(function (item, i) {
-    (item === array[i]); // true
+    (item === <array>[i]); // true
 });
 ```
 
