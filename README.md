@@ -1922,7 +1922,7 @@ $.inArray(<item>, <array>);
 to Vanilla JS
 
 ```js
-[].indexOf(<item>);
+<array>.indexOf(<item>);
 ```
 
 #### Is Array ####
