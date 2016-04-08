@@ -899,8 +899,7 @@ $(<htmlElement>).trigger(event);
 to Vanilla JS
 
 ```js
-var event = document.createEvent("HTMLEvents");
-event.initEvent("click", true, false);
+var event = new Event("click");
 event.test = true;
 
 <htmlElement>.addEventListener("click", function (event) {
