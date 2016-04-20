@@ -109,6 +109,7 @@ The much faster method:
         - [Insert Before](#insert-before)
         - [Prepend](#prepend)
         - [Remove](#remove)
+        - [Remove Children](#remove-children)
         - [Replace](#replace)
         - [Set HTML](#set-html)
         - [Set Node HTML](#set-node-html)
@@ -1264,6 +1265,23 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode.removeChild(<htmlElement>);
+```
+
+#### Remove Children ####
+
+From jQuery
+
+```js
+$(<htmlElement>).empty();
+```
+
+to Vanilla JS
+
+```js
+while (<htmlElement>.firstChild) {
+    <htmlElement>.removeChild(<htmlElement>.firstChild);
+}
+// <htmlElement>.innerHTML = '';
 ```
 
 #### Replace ####
