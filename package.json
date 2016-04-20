@@ -1,6 +1,6 @@
 {
   "name": "vanilla-js-dom",
-  "version": "4.10.162",
+  "version": "5.2.28",
   "description": "Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.",
   "main": "vanilla.js",
   "scripts": {
