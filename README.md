@@ -4,7 +4,7 @@
 
 **Vous êtes français ? Le README [derrière ce lien](https://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
-<img src="https://blog.lesieur.name/media/images/upload/vanilla.jpg" style="margin: 0 auto; display: block; max-width:100%;">
+<img src="https://blog.lesieur.name/media/images/upload/vanilla.png" style="margin: 0 auto; display: block; max-width:100%;">
 
 
 
