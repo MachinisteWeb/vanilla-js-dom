@@ -4,6 +4,8 @@
 
 **Vous êtes français ? Le README [derrière ce lien](https://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
+![Vanilla JS](https://blog.lesieur.name/media/images/upload/vanilla.jpg)
+
 
 
 
