@@ -19,7 +19,7 @@ Vanilla JS is a fast, lightweight, cross-platform tool for building incredible, 
 Just put the following code:
 
 ```html
-<script src="path/to/vanilla.js"></script>
+<!-- <script src="path/to/vanilla.js"></script> -->
 ```
 
 ### Use in Production ###
