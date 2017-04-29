@@ -256,9 +256,9 @@ Understand each type of DOM Object:
 - `querySelector(".example")` return a `HTMLElement`.
 - `querySelector(".example").children` return a `HTMLCollection`, each collection's item is a `HTMLElement`, two `[span, span]` here.
 - `querySelector(".example").childNodes` return a `NodeList`, each collection's item is a `Node`, seven `[text, span, text, comment, text, span, text]` here.
-- `querySelector(".example").childNodes[0]` return a `Node` of `typeNode` 3, as a text. (`...nodeList[3]` is `typeNode` 8 as a comment).
+- `querySelector(".example").childNodes[0]` return a `Text` (`Node`) of `typeNode` 3, as a text. (`...nodeList[3]` is `typeNode` 8 as a `Comment` (`Node` too)).
 
-### .Selector #Dom ###
+### .Node #Selector ###
 
 #### #id ####
 
@@ -301,7 +301,7 @@ $("#id .classname tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll("#id .classname tagname"); // Not Live (Static)
+var nodeList = document.querySelectorAll("#id .classname tagname"); // Not Live (Snapshot)
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -809,7 +809,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(window).load(function () {
+$(<htmlElement>).load(function () {
     // I am full loaded.
 });
 ```
@@ -817,7 +817,7 @@ $(window).load(function () {
 to Vanilla JS
 
 ```js
-window.addEventListener("load", function () {
+<htmlElement>.addEventListener("load", function () {
     // I am full loaded.
 });
 ```
@@ -955,7 +955,7 @@ to Vanilla JS
 
 ```js
 <htmlCollection>.item(0);
-// <htmlCollection>[0]
+// <htmlCollection>[0];
 ```
 
 #### Has ####
@@ -1004,7 +1004,7 @@ to Vanilla JS
 
 ```js
 <htmlCollection>.item(<index>);
-// <htmlCollection>[<index>]
+// <htmlCollection>[<index>];
 ```
 
 #### Last ####
@@ -1019,7 +1019,7 @@ to Vanilla JS
 
 ```js
 <htmlCollection>.item(<htmlCollection>.length - 1);
-// <htmlCollection>[<htmlCollection>.length - 1]
+// <htmlCollection>[<htmlCollection>.length - 1];
 ```
 
 #### Not ####
@@ -1924,6 +1924,7 @@ From jQuery
 to Vanilla JS
 
 ```js
+// <object> = Object.assign(<object>, <extendingObject>); // Deep extend but not supported by IE
 Object.keys(<object>).forEach(function (key) {
     <object>[key] = (<extendingObject>[key]) ? <extendingObject>[key] : <object>[key];
 });
@@ -2029,17 +2030,17 @@ JSON.parse(<jsonString>);
 From jQuery
 
 ```js
-$.parseXML(<htmlString>);
+$.parseXML(<xmlString>);
 ```
 
 to Vanilla JS
 
 ```js
-function parseXML(htmlString) {
-    return (new DOMParser()).parseFromString(htmlString,"text/xml");
+function parseXML(xmlString) {
+    return (new DOMParser()).parseFromString(xmlString, "text/xml");
 }
 
-parseXML(<htmlString>);
+parseXML(<xmlString>);
 ```
 
 #### Serialize Array ####
