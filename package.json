@@ -1,6 +1,6 @@
 {
   "name": "vanilla-js-dom",
-  "version": "5.6.26",
+  "version": "6.0.118",
   "description": "Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.",
   "main": "vanilla.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Haeresis/vanilla-js.git"
+    "url": "git+https://github.com/Haeresis/vanilla-js-dom.git"
   },
   "keywords": [
     "javascript",
@@ -20,7 +20,7 @@
   "author": "Haeresis",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/Haeresis/vanilla-js/issues"
+    "url": "https://github.com/Haeresis/vanilla-js-dom/issues"
   },
-  "homepage": "https://github.com/Haeresis/vanilla-js#readme"
+  "homepage": "https://github.com/Haeresis/vanilla-js-dom#readme"
 }
