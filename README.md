@@ -1,6 +1,6 @@
 # Vanilla JS #
 
-[![Faites un don](https://img.shields.io/badge/don-%E2%9D%A4-ddddff.svg)](https://www.paypal.me/BrunoLesieur/5) [![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Haeresis/vanilla-js) [![Version 5.6](https://img.shields.io/badge/version-5.6-brightgreen.svg)](https://github.com/Haeresis/vanilla-js) [![Technical Debt Ratio](https://img.shields.io/badge/debt_ratio-0%25-brightgreen.svg)](http://docs.sonarqube.org/display/PLUG/JavaScript+Plugin)
+[![Faites un don](https://img.shields.io/badge/don-%E2%9D%A4-ddddff.svg)](https://www.paypal.me/BrunoLesieur/5) [![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Haeresis/vanilla-js-dom) [![Version 6.0](https://img.shields.io/badge/version-5.6-brightgreen.svg)](https://github.com/Haeresis/vanilla-js-dom) [![Technical Debt Ratio](https://img.shields.io/badge/debt_ratio-0%25-brightgreen.svg)](http://docs.sonarqube.org/display/PLUG/JavaScript+Plugin)
 
 **Vous êtes français ? Le README [derrière ce lien](https://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
