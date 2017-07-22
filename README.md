@@ -503,7 +503,7 @@ function request(url, next) {
     });
 }
 
-request(&gt;url>, function (err, response) {
+request(<url>, function (err, response) {
     if (err) {
       return err;
     }
