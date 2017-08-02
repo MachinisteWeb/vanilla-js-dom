@@ -585,7 +585,7 @@ $(<htmlElement>).data(<dataName>);
 to Vanilla JS
 
 ```js
-<htmlElement>.getAttribute(<"data-" + dataName>);
+<htmlElement>.getAttribute("data-" + <dataName>);
 ```
 
 #### Get Value ####
