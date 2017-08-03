@@ -655,7 +655,7 @@ $(<htmlElement>).removeData(<dataName>);
 to Vanilla JS
 
 ```js
-<htmlElement>.removeAttribute(<"data-" + dataName>);
+<htmlElement>.removeAttribute("data-" + <dataName>);
 ```
 
 #### Set Attribute ####
@@ -683,7 +683,7 @@ $(<htmlElement>).data(<dataName>, <value>);
 to Vanilla JS
 
 ```js
-<htmlElement>.setAttribute(<"data-" + dataName>, <value>);
+<htmlElement>.setAttribute("data-" + <dataName>, <value>);
 ```
 
 #### Set Value ####
