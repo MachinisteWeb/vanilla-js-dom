@@ -593,7 +593,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).value();
+$(<htmlElement>).val();
 ```
 
 to Vanilla JS
@@ -691,7 +691,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<htmlElement>).value(<value>);
+$(<htmlElement>).val(<value>);
 ```
 
 to Vanilla JS
