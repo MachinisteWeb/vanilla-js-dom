@@ -479,10 +479,9 @@ $.ajax({
 to Vanilla JS
 
 ```js
-var post = new XMLHttpRequest();
-post.open("POST", <url>, true);
-post.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-post.send(<data>);
+fetch(<url>, {method: "POST", body: <data>}).then((res) => {
+  console.log(res)
+})
 ```
 
 #### Request / Response ####
