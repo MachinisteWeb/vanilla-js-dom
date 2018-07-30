@@ -822,7 +822,7 @@ $(<htmlElement>).show();
 to Vanilla JS
 
 ```js
-<htmlElement>.style.display = ';
+<htmlElement>.style.display = '';
 ```
 
 
@@ -901,9 +901,12 @@ $(<htmlElement>).one(<eventName>, <eventHandler>);
 to Vanilla JS
 
 ```js
+<htmlElement>.addEventListener(<eventName>,<eventHandler>,{once: true});
+
+/* // IE fallback
 <htmlElement>.addEventListener(<eventName>, function callee(event) {
     event.target.removeEventListener(e.type, callee);
-});
+}); */
 ```
 
 #### Ready ####
