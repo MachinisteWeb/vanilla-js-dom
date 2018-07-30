@@ -177,11 +177,11 @@ When Vanilla JS perform 100 operations, others do:
 
 |              | Code                                                                         | 100 ops Vanilla JS |
 |--------------|:-----------------------------------------------------------------------------|-------------------:|
-| Vanilla JS   | [document.getElementById("vanilla");](http://codepen.io/Haeresis/pen/RWeqaB) |                100 |
-| Dojo         | [dojo.byId("dojo");](http://codepen.io/Haeresis/pen/yYQjxp)                  |                 92 |
-| Prototype JS | [$("prototype");](http://codepen.io/Haeresis/pen/yYQjEP)                     |                 57 |
-| jQuery       | [$("#jquery");](http://codepen.io/Haeresis/pen/EVOLLe)                       |                 42 |
-| MooTools     | [document.id("mootools");](http://codepen.io/Haeresis/pen/gaQzQr)            |                 24 |
+| Vanilla JS   | [document.getElementById('vanilla');](http://codepen.io/Haeresis/pen/RWeqaB) |                100 |
+| Dojo         | [dojo.byId('dojo');](http://codepen.io/Haeresis/pen/yYQjxp)                  |                 92 |
+| Prototype JS | [$('prototype');](http://codepen.io/Haeresis/pen/yYQjEP)                     |                 57 |
+| jQuery       | [$('#jquery');](http://codepen.io/Haeresis/pen/EVOLLe)                       |                 42 |
+| MooTools     | [document.id('mootools');](http://codepen.io/Haeresis/pen/gaQzQr)            |                 24 |
 
 
 
@@ -189,11 +189,11 @@ When Vanilla JS perform 100 operations, others do:
 
 |              | Code                                                                                  | 100 ops Vanilla JS |
 |--------------|:--------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS   | [document.getElementsByTagName("div");](http://codepen.io/Haeresis/pen/BoGVzd)        |                100 |
-| Prototype JS | [Prototype.Selector.select("div", document);](http://codepen.io/Haeresis/pen/LpXrOG)  |                 25 |
-| jQuery       | [$("div");](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
-| Dojo         | [dojo.query("div");](http://codepen.io/Haeresis/pen/dYQKJX)                           |                  3 |
-| MooTools     | [Slick.search(document, "div", new Elements);](http://codepen.io/Haeresis/pen/qOQKxO) |                  2 |
+| Vanilla JS   | [document.getElementsByTagName('div');](http://codepen.io/Haeresis/pen/BoGVzd)        |                100 |
+| Prototype JS | [Prototype.Selector.select('div', document);](http://codepen.io/Haeresis/pen/LpXrOG)  |                 25 |
+| jQuery       | [$('div');](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
+| Dojo         | [dojo.query('div');](http://codepen.io/Haeresis/pen/dYQKJX)                           |                  3 |
+| MooTools     | [Slick.search(document, 'div', new Elements);](http://codepen.io/Haeresis/pen/qOQKxO) |                  2 |
 
 
 
@@ -203,22 +203,22 @@ When Vanilla JS perform 100 operations, others do:
 
 |            | Code                                                                                 | 100 ops Vanilla JS |
 |------------|:-------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.getElementsByClassName("vanilla");](http://codepen.io/Haeresis/pen/ZbmRMN) |                100 |
-| jQuery     | [$(".jquery");](http://codepen.io/Haeresis/pen/jbQKeQ)                               |                 25 |
+| Vanilla JS | [document.getElementsByClassName('vanilla');](http://codepen.io/Haeresis/pen/ZbmRMN) |                100 |
+| jQuery     | [$('.jquery');](http://codepen.io/Haeresis/pen/jbQKeQ)                               |                 25 |
 
 #### Retrieve DOM element with `<#id> .inner span` selector ####
 
 |            | Code                                                                                     | 100 ops Vanilla JS |
 |------------|:-----------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.querySelector("#vanilla .inner span");](http://codepen.io/Haeresis/pen/PPxaVQ) |                100 |
-| jQuery     | [$("#jquery .inner span");](http://codepen.io/Haeresis/pen/YyRvgQ)                       |                 17 |
+| Vanilla JS | [document.querySelector('#vanilla .inner span');](http://codepen.io/Haeresis/pen/PPxaVQ) |                100 |
+| jQuery     | [$('#jquery .inner span');](http://codepen.io/Haeresis/pen/YyRvgQ)                       |                 17 |
 
 #### Retrieve 10 DOM elements with `<.className> .inner span` selector ####
 
 |            | Code                                                                                        | 100 ops Vanilla JS |
 |------------|:--------------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.querySelectorAll(".vanilla .inner span");](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
-| jQuery     | [$(".jquery .inner span");](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
+| Vanilla JS | [document.querySelectorAll('.vanilla .inner span');](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
+| jQuery     | [$('.jquery .inner span');](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
 
 
 
@@ -228,11 +228,11 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 
 | Select node `<div class="target" id="target"></div>`                                       | 100 ops Vanilla JS |
 |:-------------------------------------------------------------------------------------------|-------------------:|
-| [document.getElementsByTagName("div");](http://codepen.io/Haeresis/pen/PPxdWo)             |                100 |
-| [document.getElementById("target");](http://codepen.io/Haeresis/pen/xwQaEz)                |                 99 |
-| [document.getElementsByClassName("target");](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
-| [document.querySelector(".vanilla .inner div");](http://codepen.io/Haeresis/pen/qOQMRJ)    |                 68 |
-| [document.querySelectorAll(".vanilla .inner div");](http://codepen.io/Haeresis/pen/epQLve) |                 35 |
+| [document.getElementsByTagName('div');](http://codepen.io/Haeresis/pen/PPxdWo)             |                100 |
+| [document.getElementById('target');](http://codepen.io/Haeresis/pen/xwQaEz)                |                 99 |
+| [document.getElementsByClassName('target');](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
+| [document.querySelector('.vanilla .inner div');](http://codepen.io/Haeresis/pen/qOQMRJ)    |                 68 |
+| [document.querySelectorAll('.vanilla .inner div');](http://codepen.io/Haeresis/pen/epQLve) |                 35 |
 
 
 
@@ -253,10 +253,10 @@ Understand each type of DOM Object:
 </div>
 ```
 
-- `querySelector(".example")` return a `HTMLElement`.
-- `querySelector(".example").children` return a `HTMLCollection`, each collection's item is a `HTMLElement`, two `[span, span]` here.
-- `querySelector(".example").childNodes` return a `NodeList`, each collection's item is a `Node`, seven `[text, span, text, comment, text, span, text]` here.
-- `querySelector(".example").childNodes[0]` return a `Text` (`Node`) of `typeNode` 3, as a text. (`...nodeList[3]` is `typeNode` 8 as a `Comment` (`Node` too)).
+- `querySelector('.example')` return a `HTMLElement`.
+- `querySelector('.example').children` return a `HTMLCollection`, each collection's item is a `HTMLElement`, two `[span, span]` here.
+- `querySelector('.example').childNodes` return a `NodeList`, each collection's item is a `Node`, seven `[text, span, text, comment, text, span, text]` here.
+- `querySelector('.example').childNodes[0]` return a `Text` (`Node`) of `typeNode` 3, as a text. (`...nodeList[3]` is `typeNode` 8 as a `Comment` (`Node` too)).
 
 ### .Node #Selector ###
 
@@ -265,13 +265,13 @@ Understand each type of DOM Object:
 From jQuery
 
 ```js
-var htmlElement = $("#id")[0];
+var htmlElement = $('#id')[0];
 ```
 
 to Vanilla JS
 
 ```js
-var htmlElement = document.getElementById("id");
+var htmlElement = document.getElementById('id');
 ```
 
 #### .classname #id tagname ####
@@ -279,13 +279,13 @@ var htmlElement = document.getElementById("id");
 From jQuery
 
 ```js
-var htmlElement = $("#id .classname tagname")[0];
+var htmlElement = $('#id .classname tagname')[0];
 ```
 
 to Vanilla JS
 
 ```js
-document.querySelector("#id .classname tagname");
+document.querySelector('#id .classname tagname');
 ```
 
 #### [.classname #id tagname] ####
@@ -293,7 +293,7 @@ document.querySelector("#id .classname tagname");
 From jQuery
 
 ```js
-$("#id .classname tagname").each(function (i, htmlElement) {
+$('#id .classname tagname').each(function (i, htmlElement) {
     htmlElement;
 });
 ```
@@ -301,7 +301,7 @@ $("#id .classname tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var nodeList = document.querySelectorAll("#id .classname tagname"); // Not Live (Snapshot)
+var nodeList = document.querySelectorAll('#id .classname tagname'); // Not Live (Snapshot)
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -312,7 +312,7 @@ var nodeList = document.querySelectorAll("#id .classname tagname"); // Not Live 
 From jQuery
 
 ```js
-$(".classname").each(function (i, htmlElement) {
+$('.classname').each(function (i, htmlElement) {
     htmlElement;
 });
 ```
@@ -320,8 +320,8 @@ $(".classname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByClassName("classname"); // Live
-// var nodeList = document.querySelectorAll(".classname"); // Not Live (Snapshot)
+var htmlCollection = document.getElementsByClassName('classname'); // Live
+// var nodeList = document.querySelectorAll('.classname'); // Not Live (Snapshot)
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
@@ -340,8 +340,8 @@ $('[name="name"]').each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var nodeList = document.getElementsByName("name"); // Live
-// var nodeList = document.querySelectorAll("[name=name]"); // Not Live (Snapshot)
+var nodeList = document.getElementsByName('name'); // Live
+// var nodeList = document.querySelectorAll('[name=name]'); // Not Live (Snapshot)
 [].forEach.call(nodeList, function (node) {
     node;
 });
@@ -352,7 +352,7 @@ var nodeList = document.getElementsByName("name"); // Live
 From jQuery
 
 ```js
-$("tagname").each(function (i, htmlElement) {
+$('tagname').each(function (i, htmlElement) {
     htmlElement;
 });
 ```
@@ -360,8 +360,8 @@ $("tagname").each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByTagName("tagname"); // Live
-// var nodeList = document.querySelectorAll("tagname"); // Not Live (Snapshot)
+var htmlCollection = document.getElementsByTagName('tagname'); // Live
+// var nodeList = document.querySelectorAll('tagname'); // Not Live (Snapshot)
 [].forEach.call(htmlCollection, function (htmlElement) {
     htmlElement;
 });
@@ -372,7 +372,7 @@ var htmlCollection = document.getElementsByTagName("tagname"); // Live
 From jQuery
 
 ```js
-$($(".className").get().reverse()).each(function (i, htmlElement) {
+$($('.className').get().reverse()).each(function (i, htmlElement) {
     htmlElement;
 });
 ```
@@ -380,7 +380,7 @@ $($(".className").get().reverse()).each(function (i, htmlElement) {
 to Vanilla JS
 
 ```js
-var htmlCollection = document.getElementsByClassName("className"), // Live
+var htmlCollection = document.getElementsByClassName('className'), // Live
     i = htmlCollection.length;
 while (htmlElement = htmlCollection[--i]) {
     htmlElement;
@@ -397,7 +397,7 @@ From jQuery
 
 ```js
 $.ajax({
-  type: "GET",
+  type: 'GET',
   url: <url>,
   data: <data>
 });
@@ -407,8 +407,8 @@ to Vanilla JS
 
 ```js
 var get = new XMLHttpRequest();
-get.open("GET", <url>, true);
-get.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+get.open('GET', <url>, true);
+get.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 get.send(<data>);
 ```
 
@@ -421,7 +421,7 @@ function getJSON(url, next) {
     $.getJSON(url, function (data) {
       next(null, data);
     }).error(function () {
-      next(new Error("There was a connection error of some sort."));
+      next(new Error('There was a connection error of some sort.'));
     });
 }
 
@@ -439,19 +439,19 @@ to Vanilla JS
 ```js
 function getJSON(url, next) {
     var request = new XMLHttpRequest();
-    request.open("GET", url, true);
+    request.open('GET', url, true);
     request.send();
 
-    request.addEventListener("load", function () {
+    request.addEventListener('load', function () {
         if (request.status < 200 && request.status >= 400) {
-            return next(new Error("We reached our target server, but it returned an error."));
+            return next(new Error('We reached our target server, but it returned an error.'));
         }
 
         next(null, JSON.parse(request.responseText));
     });
 
-    request.addEventListener("error", function () {
-        next(new Error("There was a connection error of some sort."));
+    request.addEventListener('error', function () {
+        next(new Error('There was a connection error of some sort.'));
     });
 }
 
@@ -470,7 +470,7 @@ From jQuery
 
 ```js
 $.ajax({
-  type: "POST",
+  type: 'POST',
   url: <url>,
   data: <data>
 });
@@ -480,8 +480,8 @@ to Vanilla JS
 
 ```js
 var post = new XMLHttpRequest();
-post.open("POST", <url>, true);
-post.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+post.open('POST', <url>, true);
+post.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 post.send(<data>);
 ```
 
@@ -498,7 +498,7 @@ function request(url, next) {
           next(null, response);
         },
         error: function() {
-          next(new Error("There was a connection error of some sort."));
+          next(new Error('There was a connection error of some sort.'));
         }
     });
 }
@@ -517,23 +517,23 @@ to Vanilla JS
 ```js
 function request(url, next) {
     var request = new XMLHttpRequest();
-    request.open("GET", url, true);
+    request.open('GET', url, true);
     request.send();
 
-    request.addEventListener("load", function () {
+    request.addEventListener('load', function () {
         if (request.status < 200 && request.status >= 400) {
-            return next(new Error("We reached our target server, but it returned an error."));
+            return next(new Error('We reached our target server, but it returned an error.'));
         }
 
         next(null, request.responseText);
     });
 
-    request.addEventListener("error", function () {
-        return next(new Error("There was a connection error of some sort."));
+    request.addEventListener('error', function () {
+        return next(new Error('There was a connection error of some sort.'));
     });
 }
 
-request(&gt;url>, function (err, response) {
+request(<url>, function (err, response) {
     if (err) {
       return err;
     }
@@ -585,7 +585,7 @@ $(<htmlElement>).data(<dataName>);
 to Vanilla JS
 
 ```js
-<htmlElement>.getAttribute("data-" + <dataName>);
+<htmlElement>.getAttribute('data-' + <dataName>);
 ```
 
 #### Get Value ####
@@ -655,7 +655,7 @@ $(<htmlElement>).removeData(<dataName>);
 to Vanilla JS
 
 ```js
-<htmlElement>.removeAttribute("data-" + <dataName>);
+<htmlElement>.removeAttribute('data-' + <dataName>);
 ```
 
 #### Set Attribute ####
@@ -683,7 +683,7 @@ $(<htmlElement>).data(<dataName>, <value>);
 to Vanilla JS
 
 ```js
-<htmlElement>.setAttribute("data-" + <dataName>, <value>);
+<htmlElement>.setAttribute('data-' + <dataName>, <value>);
 ```
 
 #### Set Value ####
@@ -724,10 +724,10 @@ From jQuery
 
 ```js
 function fadeIn($htmlElement, speed, next) {
-    $htmlElement.css("opacity", "0").animate({ opacity: 1 }, speed, next);
+    $htmlElement.css('opacity', '0').animate({ opacity: 1 }, speed, next);
 }
 fadeIn($(<htmlElement>), 2000, function () {
-  $(this).css("opacity", "");
+  $(this).css('opacity', '');
 });
 ```
 
@@ -768,7 +768,7 @@ $(<htmlElement>).hide();
 to Vanilla JS
 
 ```js
-<htmlElement>.style.display = "none";
+<htmlElement>.style.display = 'none';
 ```
 
 #### Show ####
@@ -782,7 +782,7 @@ $(<htmlElement>).show();
 to Vanilla JS
 
 ```js
-<htmlElement>.style.display = "";
+<htmlElement>.style.display = ';
 ```
 
 
@@ -800,8 +800,8 @@ $(<htmlElement>).hover(<eventHandlerMouseIn>, <eventHandlerMouseOut>);
 to Vanilla JS
 
 ```js
-<htmlElement>.addEventListener("mouseenter", <eventHandlerMouseIn>);
-<htmlElement>.addEventListener("mouseleave", <eventHandlerMouseOut>);
+<htmlElement>.addEventListener('mouseenter', <eventHandlerMouseIn>);
+<htmlElement>.addEventListener('mouseleave', <eventHandlerMouseOut>);
 ```
 
 #### Load ####
@@ -817,7 +817,7 @@ $(<htmlElement>).load(function () {
 to Vanilla JS
 
 ```js
-<htmlElement>.addEventListener("load", function () {
+<htmlElement>.addEventListener('load', function () {
     // I am full loaded.
 });
 ```
@@ -879,7 +879,7 @@ $(document).ready(function () {
 to Vanilla JS
 
 ```js
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
     // I am ready to be manipulate.
 });
 ```
@@ -889,23 +889,23 @@ document.addEventListener("DOMContentLoaded", function () {
 From jQuery
 
 ```js
-var event = jQuery.Event("click");
+var event = jQuery.Event('click');
 event.test = true;
 
 $(<htmlElement>).click(function (event) {
     event.test; // undefined by click, true by trigger.
 });
 $(<htmlElement>).trigger(event);
-// $(<htmlElement>).trigger("click"); // Shortcut without test property.
+// $(<htmlElement>).trigger('click'); // Shortcut without test property.
 ```
 
 to Vanilla JS
 
 ```js
-var event = new Event("click");
+var event = new Event('click');
 event.test = true;
 
-<htmlElement>.addEventListener("click", function (event) {
+<htmlElement>.addEventListener('click', function (event) {
     event.test; // undefined by click, true by trigger.
 });
 <htmlElement>.dispatchEvent(event);
@@ -1071,7 +1071,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.appendChild(<appendHtmlElement>);
-// <htmlElement>.insertAdjacentHTML("beforeEnd", "<htmlString>");
+// <htmlElement>.insertAdjacentHTML('beforeEnd', <htmlString>);
 ```
 
 #### Clone ####
@@ -1128,7 +1128,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-$(<<tagString>>);
+$('<' + <tagString> + '>');
 ```
 
 to Vanilla JS
@@ -1148,7 +1148,7 @@ $(<htmlElement>).empty();
 to Vanilla JS
 
 ```js
-<htmlElement>.innerHTML = "";
+<htmlElement>.innerHTML = '';
 ```
 
 #### Get HTML ####
@@ -1170,7 +1170,7 @@ to Vanilla JS
 From jQuery
 
 ```js
-$("<div>").append($(<htmlElement>).clone()).html();
+$('<div>').append($(<htmlElement>).clone()).html();
 ```
 
 to Vanilla JS
@@ -1220,7 +1220,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode.insertBefore(<afterHtmlElement>, <htmlElement>.nextSibling);
-// <htmlElement>.insertAdjacentHTML("afterend", <htmlString>);
+// <htmlElement>.insertAdjacentHTML('afterend', <htmlString>);
 ```
 
 #### Insert Before ####
@@ -1236,7 +1236,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.parentNode.insertBefore(<beforeHtmlElement>, <htmlElement>);
-// <htmlElement>.insertAdjacentHTML("beforebegin", <htmlString>);
+// <htmlElement>.insertAdjacentHTML('beforebegin', <htmlString>);
 ```
 
 #### Prepend ####
@@ -1252,7 +1252,7 @@ to Vanilla JS
 
 ```js
 <htmlElement>.insertBefore(<prependHtmlElement>, <htmlElement>.firstChild);
-// <htmlElement>.insertAdjacentHTML("afterBegin", "<htmlString>");
+// <htmlElement>.insertAdjacentHTML('afterBegin', <htmlString>);
 ```
 
 #### Remove ####
@@ -1456,13 +1456,15 @@ $(<htmlElement>).closest(<parentSelector>);
 to Vanilla JS
 
 ```js
+<htmlElement>.closest(<parentSelector>);
+
+/* // IE fallback
 var htmlElement = <htmlElement>,
     parents = [];
 while (htmlElement = htmlElement.parentNode) {
-    (htmlElement.matches && htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : "";
+    (htmlElement.matches && htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : '';
 }
-parents[0];
-// <htmlElement>.closest(<parentSelector>); // More fast but not supported by IE/EDGE
+parents[0]; */
 ```
 
 #### Find Children ####
@@ -1583,13 +1585,18 @@ to Vanilla JS
 ```js
 var htmlElement = <htmlElement>,
     parents = [];
-while (htmlElement = htmlElement.parentNode) {
-    (htmlElement.matches && htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : "";
-/* // More fast alternative but not supported by IE/Edge
 while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
-    parents.push(htmlElement); */
+    parents.push(htmlElement);
 }
 parents;
+
+/* // IE fallback
+var htmlElement = <htmlElement>,
+    parents = [];
+while (htmlElement = htmlElement.parentNode) {
+    (htmlElement.matches && htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : '';
+}
+parents; */
 ```
 
 #### Parents Until ####
@@ -1606,13 +1613,19 @@ to Vanilla JS
 var htmlElement = <htmlElement>,
     parentsUntil = [],
     until = true;
-while (htmlElement = htmlElement.parentNode) {
-    (until && htmlElement.matches && !htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : until = false;
-/* // More fast alternative but not supported by IE/Edge
 while (htmlElement = htmlElement.parentNode.closest(<parentSelector>)) {
-    (until) ? parents.push(htmlElement) : until = false; */
+    (until) ? parents.push(htmlElement) : until = false;
 }
 parentsUntil;
+
+/* // IE fallback
+var htmlElement = <htmlElement>,
+    parentsUntil = [],
+    until = true;
+while (htmlElement = htmlElement.parentNode) {
+    (until && htmlElement.matches && !htmlElement.matches(<parentSelector>)) ? parents.push(htmlElement) : until = false;
+}
+parentsUntil; */
 ```
 
 #### Previous ####
@@ -1924,11 +1937,13 @@ From jQuery
 to Vanilla JS
 
 ```js
-// <object> = Object.assign(<object>, <extendingObject>); // Deep extend but not supported by IE
+<object> = Object.assign(<object>, <extendingObject>);
+
+/* // IE fallback (not deep)
 Object.keys(<object>).forEach(function (key) {
     <object>[key] = (<extendingObject>[key]) ? <extendingObject>[key] : <object>[key];
 });
-<object>;
+<object>; */
 ```
 
 #### Index Of ####
@@ -2037,7 +2052,7 @@ to Vanilla JS
 
 ```js
 function parseXML(xmlString) {
-    return (new DOMParser()).parseFromString(xmlString, "text/xml");
+    return (new DOMParser()).parseFromString(xmlString, 'text/xml');
 }
 
 parseXML(<xmlString>);
@@ -2057,18 +2072,18 @@ to Vanilla JS
 function serializeArray(form) {
     var field, length, output = [];
 
-    if (typeof form === "object" && form.nodeName === "FORM") {
+    if (typeof form === 'object' && form.nodeName === 'FORM') {
         var length = form.elements.length;
         for (i = 0; i < length; i++) {
             field = form.elements[i];
-            if (field.name && !field.disabled && field.type !== "file" && field.type != "reset" && field.type != "submit" && field.type != "button") {
-                if (field.type === "select-multiple") {
+            if (field.name && !field.disabled && field.type !== 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
+                if (field.type === 'select-multiple') {
                     length = form.elements[i].options.length;
                     for (j = 0; j < length; j++) {
                         if(field.options[j].selected)
                             output[output.length] = { name: field.name, value: field.options[j].value };
                     }
-                } else if ((field.type !== "checkbox" && field.type !== "radio") || field.checked) {
+                } else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
                     output[output.length] = { name: field.name, value: field.value };
                 }
             }
@@ -2094,26 +2109,26 @@ to Vanilla JS
 function serialize(form) {
     var field, length, output = [];
 
-    if (typeof form === "object" && form.nodeName === "FORM") {
+    if (typeof form === 'object' && form.nodeName === 'FORM') {
         var length = form.elements.length;
         for (var i = 0; i < length; i++) {
             field = form.elements[i];
-            if (field.name && !field.disabled && field.type !== "file" && field.type !== "reset" && field.type !== "submit" && field.type !== 'button') {
-                if (field.type === "select-multiple") {
+            if (field.name && !field.disabled && field.type !== 'file' && field.type !== 'reset' && field.type !== 'submit' && field.type !== 'button') {
+                if (field.type === 'select-multiple') {
                     length = form.elements[i].options.length;
                     for (var j=0; j < length; j++) {
                         if (field.options[j].selected) {
-                            output[output.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[j].value);
+                            output[output.length] = encodeURIComponent(field.name) + '=' + encodeURIComponent(field.options[j].value);
                         }
                     }
-                } else if ((field.type !== "checkbox" && field.type !== "radio") || field.checked) {
-                    output[output.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
+                } else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+                    output[output.length] = encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value);
                 }
             }
         }
     }
 
-    return output.join("&").replace(/%20/g, "+");
+    return output.join('&').replace(/%20/g, '+');
 }
 serialize(<form>);
 ```
