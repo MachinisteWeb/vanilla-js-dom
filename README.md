@@ -479,10 +479,16 @@ $.ajax({
 to Vanilla JS
 
 ```js
+fetch(<url>, {
+  method: 'POST',
+  body: <data>
+});
+
+/* // IE fallback
 var post = new XMLHttpRequest();
 post.open('POST', <url>, true);
 post.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-post.send(<data>);
+post.send(<data>); */
 ```
 
 #### Request / Response ####
