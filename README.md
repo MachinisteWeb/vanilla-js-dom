@@ -788,7 +788,7 @@ $(<htmlElement>).show();
 to Vanilla JS
 
 ```js
-<htmlElement>.style.display = ';
+<htmlElement>.style.display = '';
 ```
 
 
