@@ -425,15 +425,15 @@ From jQuery
 ```js
 function getJSON(url, next) {
     $.getJSON(url, function (data) {
-      next(null, data);
+        next(null, data);
     }).error(function () {
-      next(new Error('There was a connection error of some sort.'));
+        next(new Error('There was a connection error of some sort.'));
     });
 }
 
 getJSON(<url>, function (err, data) {
     if (err) {
-      return err;
+        return err;
     }
 
     data;
@@ -443,18 +443,22 @@ getJSON(<url>, function (err, data) {
 to Vanilla JS
 
 ```js
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-      return response;
-  } 
-  
-  throw new Error('There was a connection error of some sort.');
+function getJSON(url, next) {
+    fetch(url)
+        .then(function (data) {
+            if (data.status >= 200 && data.status < 300) {
+                return data;
+            } 
+          
+            next(new Error('We reached our target server, but it returned an error.'));
+        })
+        .then(function (data) {
+            next(null, data.json());
+        })
+        .catch(function () {
+            next(new Error('There was a connection error of some sort.'));
+        });
 }
-
-fetch(<url>)
-    .then(checkStatus)
-    .then(response => response.json())
-    .catch(error => error);
 
 /* // IE fallback
 function getJSON(url, next) {
@@ -470,10 +474,10 @@ function getJSON(url, next) {
         next(null, JSON.parse(request.responseText));
     });
 
-    request.addEventListener('error', function () {
-        next(new Error('There was a connection error of some sort.'));
+    request.addEventListener('error', function (error) {
+        next(new Error('There was a connection error of some sort.'), error);
     });
-}
+} */
 
 getJSON(<url>, function (err, data) {
     if (err) {
@@ -481,7 +485,7 @@ getJSON(<url>, function (err, data) {
     }
 
     data;
-}); */
+});
 ```
 
 #### POST ####
@@ -541,18 +545,22 @@ request(<url>, function (err, response) {
 to Vanilla JS
 
 ```js
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-      return response;
-  } 
-  
-  throw new Error('There was a connection error of some sort.');
+function request(url, next) {
+    fetch(url)
+        .then(function (response) {
+            if (response.status >= 200 && response.status < 300) {
+                return response;
+            } 
+          
+            next(new Error('We reached our target server, but it returned an error.'));
+        })
+        .then(function (response) {
+            next(null, response);
+        })
+        .catch(function () {
+            next(new Error('There was a connection error of some sort.'));
+        });
 }
- 
-fetch(<url>)
-  .then(checkStatus)
-  .then(response => response)
-  .catch(error => error); 
 
 /* // IE fallback
 function request(url, next) {
@@ -571,7 +579,7 @@ function request(url, next) {
     request.addEventListener('error', function () {
         return next(new Error('There was a connection error of some sort.'));
     });
-}
+} */
 
 request(<url>, function (err, response) {
     if (err) {
@@ -579,7 +587,7 @@ request(<url>, function (err, response) {
     }
 
     response;
-});  */
+});
 ```
 
 
@@ -901,7 +909,7 @@ $(<htmlElement>).one(<eventName>, <eventHandler>);
 to Vanilla JS
 
 ```js
-<htmlElement>.addEventListener(<eventName>,<eventHandler>,{once: true});
+<htmlElement>.addEventListener(<eventName>, <eventHandler>, { once: true });
 
 /* // IE fallback
 <htmlElement>.addEventListener(<eventName>, function callee(event) {
