@@ -406,10 +406,16 @@ $.ajax({
 to Vanilla JS
 
 ```js
+fetch(<url>, {
+  method: 'GET',
+  body: <data>
+});
+
+/* // IE fallback
 var get = new XMLHttpRequest();
 get.open('GET', <url>, true);
 get.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-get.send(<data>);
+get.send(<data>); */
 ```
 
 #### JSON ####
@@ -437,6 +443,20 @@ getJSON(<url>, function (err, data) {
 to Vanilla JS
 
 ```js
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+      return response;
+  } 
+  
+  throw new Error('There was a connection error of some sort.');
+}
+
+fetch(<url>)
+    .then(checkStatus)
+    .then(response => response.json())
+    .catch(error => error);
+
+/* // IE fallback
 function getJSON(url, next) {
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
@@ -461,7 +481,7 @@ getJSON(<url>, function (err, data) {
     }
 
     data;
-});
+}); */
 ```
 
 #### POST ####
@@ -521,6 +541,20 @@ request(<url>, function (err, response) {
 to Vanilla JS
 
 ```js
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+      return response;
+  } 
+  
+  throw new Error('There was a connection error of some sort.');
+}
+ 
+fetch(<url>)
+  .then(checkStatus)
+  .then(response => response)
+  .catch(error => error); 
+
+/* // IE fallback
 function request(url, next) {
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
@@ -545,7 +579,7 @@ request(<url>, function (err, response) {
     }
 
     response;
-});
+});  */
 ```
 
 
@@ -867,9 +901,12 @@ $(<htmlElement>).one(<eventName>, <eventHandler>);
 to Vanilla JS
 
 ```js
+<htmlElement>.addEventListener(<eventName>,<eventHandler>,{once: true});
+
+/* // IE fallback
 <htmlElement>.addEventListener(<eventName>, function callee(event) {
     event.target.removeEventListener(e.type, callee);
-});
+}); */
 ```
 
 #### Ready ####
