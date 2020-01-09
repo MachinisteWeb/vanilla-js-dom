@@ -62,7 +62,7 @@ The much faster method:
         - [JSON](#json)
         - [POST](#post)
         - [Request / Response](#request--response)
-    - [ATTRIBUTS](#attributs)
+    - [ATTRIBUTES](#attributes)
         - [Add Class](#add-class)
         - [Get Attribute](#get-attribute)
         - [Get Data](#get-data)
@@ -448,8 +448,8 @@ function getJSON(url, next) {
         .then(function (data) {
             if (data.status >= 200 && data.status < 300) {
                 return data;
-            } 
-          
+            }
+
             next(new Error('We reached our target server, but it returned an error.'));
         })
         .then(function (data) {
@@ -550,8 +550,8 @@ function request(url, next) {
         .then(function (response) {
             if (response.status >= 200 && response.status < 300) {
                 return response;
-            } 
-          
+            }
+
             next(new Error('We reached our target server, but it returned an error.'));
         })
         .then(function (response) {
@@ -592,7 +592,7 @@ request(<url>, function (err, response) {
 
 
 
-### ATTRIBUTS ###
+### ATTRIBUTES ###
 
 #### Add Class ####
 
