@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Haeresis/vanilla-js-dom.git"
+    "url": "git+https://github.com/MachinisteWeb/vanilla-js-dom.git"
   },
   "keywords": [
     "javascript",
@@ -17,10 +17,10 @@
     "fast",
     "proto-framework"
   ],
-  "author": "Haeresis",
+  "author": "MachinisteWeb",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/Haeresis/vanilla-js-dom/issues"
+    "url": "https://github.com/MachinisteWeb/vanilla-js-dom/issues"
   },
-  "homepage": "https://github.com/Haeresis/vanilla-js-dom#readme"
+  "homepage": "https://github.com/MachinisteWeb/vanilla-js-dom#readme"
 }

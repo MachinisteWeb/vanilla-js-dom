@@ -1,6 +1,6 @@
 # Vanilla JS #
 
-[![Faites un don](https://img.shields.io/badge/don-%E2%9D%A4-ddddff.svg)](https://www.paypal.me/BrunoLesieur/5) [![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Haeresis/vanilla-js-dom) [![Version 6.0](https://img.shields.io/badge/version-6.0-brightgreen.svg)](https://github.com/Haeresis/vanilla-js-dom) [![Technical Debt Ratio](https://img.shields.io/badge/debt_ratio-0%25-brightgreen.svg)](http://docs.sonarqube.org/display/PLUG/JavaScript+Plugin)
+[![Faites un don](https://img.shields.io/badge/don-%E2%9D%A4-ddddff.svg)](https://www.paypal.me/BrunoLesieur/5) [![Build Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/MachinisteWeb/vanilla-js-dom) [![Version 6.0](https://img.shields.io/badge/version-6.0-brightgreen.svg)](https://github.com/MachinisteWeb/vanilla-js-dom) [![Technical Debt Ratio](https://img.shields.io/badge/debt_ratio-0%25-brightgreen.svg)](http://docs.sonarqube.org/display/PLUG/JavaScript+Plugin)
 
 **Vous êtes français ? Le README [derrière ce lien](https://blog.lesieur.name/vanilla-js-france/) vous sera peut-être plus agréable.**
 
@@ -177,11 +177,11 @@ When Vanilla JS perform 100 operations, others do:
 
 |              | Code                                                                         | 100 ops Vanilla JS |
 |--------------|:-----------------------------------------------------------------------------|-------------------:|
-| Vanilla JS   | [document.getElementById('vanilla');](http://codepen.io/Haeresis/pen/RWeqaB) |                100 |
-| Dojo         | [dojo.byId('dojo');](http://codepen.io/Haeresis/pen/yYQjxp)                  |                 92 |
-| Prototype JS | [$('prototype');](http://codepen.io/Haeresis/pen/yYQjEP)                     |                 57 |
-| jQuery       | [$('#jquery');](http://codepen.io/Haeresis/pen/EVOLLe)                       |                 42 |
-| MooTools     | [document.id('mootools');](http://codepen.io/Haeresis/pen/gaQzQr)            |                 24 |
+| Vanilla JS   | [document.getElementById('vanilla');](https://codepen.io/MachinisteWeb/pen/RWeqaB) |                100 |
+| Dojo         | [dojo.byId('dojo');](https://codepen.io/MachinisteWeb/pen/yYQjxp)                  |                 92 |
+| Prototype JS | [$('prototype');](https://codepen.io/MachinisteWeb/pen/yYQjEP)                     |                 57 |
+| jQuery       | [$('#jquery');](https://codepen.io/MachinisteWeb/pen/EVOLLe)                       |                 42 |
+| MooTools     | [document.id('mootools');](https://codepen.io/MachinisteWeb/pen/gaQzQr)            |                 24 |
 
 
 
@@ -189,11 +189,11 @@ When Vanilla JS perform 100 operations, others do:
 
 |              | Code                                                                                  | 100 ops Vanilla JS |
 |--------------|:--------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS   | [document.getElementsByTagName('div');](http://codepen.io/Haeresis/pen/BoGVzd)        |                100 |
-| Prototype JS | [Prototype.Selector.select('div', document);](http://codepen.io/Haeresis/pen/LpXrOG)  |                 25 |
-| jQuery       | [$('div');](http://codepen.io/Haeresis/pen/BoGVmJ)                                    |                 21 |
-| Dojo         | [dojo.query('div');](http://codepen.io/Haeresis/pen/dYQKJX)                           |                  3 |
-| MooTools     | [Slick.search(document, 'div', new Elements);](http://codepen.io/Haeresis/pen/qOQKxO) |                  2 |
+| Vanilla JS   | [document.getElementsByTagName('div');](https://codepen.io/MachinisteWeb/pen/BoGVzd)        |                100 |
+| Prototype JS | [Prototype.Selector.select('div', document);](https://codepen.io/MachinisteWeb/pen/LpXrOG)  |                 25 |
+| jQuery       | [$('div');](https://codepen.io/MachinisteWeb/pen/BoGVmJ)                                    |                 21 |
+| Dojo         | [dojo.query('div');](https://codepen.io/MachinisteWeb/pen/dYQKJX)                           |                  3 |
+| MooTools     | [Slick.search(document, 'div', new Elements);](https://codepen.io/MachinisteWeb/pen/qOQKxO) |                  2 |
 
 
 
@@ -203,22 +203,22 @@ When Vanilla JS perform 100 operations, others do:
 
 |            | Code                                                                                 | 100 ops Vanilla JS |
 |------------|:-------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.getElementsByClassName('vanilla');](http://codepen.io/Haeresis/pen/ZbmRMN) |                100 |
-| jQuery     | [$('.jquery');](http://codepen.io/Haeresis/pen/jbQKeQ)                               |                 25 |
+| Vanilla JS | [document.getElementsByClassName('vanilla');](https://codepen.io/MachinisteWeb/pen/ZbmRMN) |                100 |
+| jQuery     | [$('.jquery');](https://codepen.io/MachinisteWeb/pen/jbQKeQ)                               |                 25 |
 
 #### Retrieve DOM element with `<#id> .inner span` selector ####
 
 |            | Code                                                                                     | 100 ops Vanilla JS |
 |------------|:-----------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.querySelector('#vanilla .inner span');](http://codepen.io/Haeresis/pen/PPxaVQ) |                100 |
-| jQuery     | [$('#jquery .inner span');](http://codepen.io/Haeresis/pen/YyRvgQ)                       |                 17 |
+| Vanilla JS | [document.querySelector('#vanilla .inner span');](https://codepen.io/MachinisteWeb/pen/PPxaVQ) |                100 |
+| jQuery     | [$('#jquery .inner span');](https://codepen.io/MachinisteWeb/pen/YyRvgQ)                       |                 17 |
 
 #### Retrieve 10 DOM elements with `<.className> .inner span` selector ####
 
 |            | Code                                                                                        | 100 ops Vanilla JS |
 |------------|:--------------------------------------------------------------------------------------------|-------------------:|
-| Vanilla JS | [document.querySelectorAll('.vanilla .inner span');](http://codepen.io/Haeresis/pen/gaQKJv) |                100 |
-| jQuery     | [$('.jquery .inner span');](http://codepen.io/Haeresis/pen/ojQyrZ)                          |                 51 |
+| Vanilla JS | [document.querySelectorAll('.vanilla .inner span');](https://codepen.io/MachinisteWeb/pen/gaQKJv) |                100 |
+| jQuery     | [$('.jquery .inner span');](https://codepen.io/MachinisteWeb/pen/ojQyrZ)                          |                 51 |
 
 
 
@@ -228,11 +228,11 @@ All tests are based on `<section id="vanilla" class="vanilla"><article class="in
 
 | Select node `<div class="target" id="target"></div>`                                       | 100 ops Vanilla JS |
 |:-------------------------------------------------------------------------------------------|-------------------:|
-| [document.getElementsByTagName('div');](http://codepen.io/Haeresis/pen/PPxdWo)             |                100 |
-| [document.getElementById('target');](http://codepen.io/Haeresis/pen/xwQaEz)                |                 99 |
-| [document.getElementsByClassName('target');](http://codepen.io/Haeresis/pen/epQLBG)        |                 96 |
-| [document.querySelector('.vanilla .inner div');](http://codepen.io/Haeresis/pen/qOQMRJ)    |                 68 |
-| [document.querySelectorAll('.vanilla .inner div');](http://codepen.io/Haeresis/pen/epQLve) |                 35 |
+| [document.getElementsByTagName('div');](https://codepen.io/MachinisteWeb/pen/PPxdWo)             |                100 |
+| [document.getElementById('target');](https://codepen.io/MachinisteWeb/pen/xwQaEz)                |                 99 |
+| [document.getElementsByClassName('target');](https://codepen.io/MachinisteWeb/pen/epQLBG)        |                 96 |
+| [document.querySelector('.vanilla .inner div');](https://codepen.io/MachinisteWeb/pen/qOQMRJ)    |                 68 |
+| [document.querySelectorAll('.vanilla .inner div');](https://codepen.io/MachinisteWeb/pen/epQLve) |                 35 |
 
 
 
